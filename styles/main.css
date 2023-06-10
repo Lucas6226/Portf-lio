@@ -1,0 +1,919 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap");
+/* 
+<[(Mapa)]>
+
+[mobile-320px]
+    1#>Configurações-basicas
+        2##>Elementos-padrão
+        2##>Tags-para-testes
+        2##>Variaveis-de-animações
+        2##>Cores
+        2##>Fontes
+    1#>Nav-bar
+    1#>Home
+        2##>titulo-home
+        2##>carrossel
+            3###>orbita
+                4####>marcações-das-orbitas
+                4####>niveis-das-orbitas
+                4####>itens-da-orbita
+                4####>animações-da-orbita
+            3###>foto-de-perfil
+            3###>roda-gigante
+                4####>peças-principais-rod-gig
+                4####>raios-rod-gig
+                4####>estrelas-rod-gig
+                4####>peças-carrinhos-rof-gig
+                4####>animação-rod-gig
+        2##>paragrafo-home
+    1#>sobre-min
+        2##>titulo
+        2##>blocos
+            3###>setas-blocos
+            3###>textos-blocos
+    1#>conhecimentos
+        2##>titulo
+        2##>barras-seletoras
+        2##>parte-informativa
+            3###>texto-conhecimentos
+            3###>grafico
+    1#>projetos
+        2##>titulo
+        2##>game-boy
+            3###>tela
+            3###>botões
+    1#>roda-pé
+        2##>textos
+            3##>texto-um
+            3##>texto-dois
+        2##>contatos
+
+[tablet-768px]
+    1#>
+*/
+/* 1#>Configurações-basicas ----------------------------------------------------------------------------- */
+/* 2##>Elementos-padrão --------------------------------------------------------------------------------- */
+@media all {
+  * {
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+    color: var(--preto);
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+    scroll-behavior: smooth;
+  }
+  section {
+    padding-top: 40px;
+    height: 100vh;
+    width: 100vw;
+  }
+  a {
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    text-decoration: none;
+    display: block;
+    transition-duration: 0.45s;
+  }
+  span {
+    cursor: default;
+  }
+  strong {
+    color: var(--verde);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+  }
+  .divisor {
+    width: 100%;
+    height: 2px;
+    background-color: var(--branco-20);
+  }
+  /* 2##>Tags-para-testes -------------------------------------------------------------------------------*/
+  .azul {
+    background-color: var(--azul) !important;
+  }
+  .rosa {
+    background-color: var(--rosa) !important;
+  }
+  .verde {
+    background-color: var(--verde) !important;
+  }
+  .vermelho {
+    background-color: var(--vermelho) !important;
+  }
+  .amarelo {
+    background-color: var(--amarelo) !important;
+  }
+  :root {
+    /* 2##>Variaveis-de-animações ----------------------------------------------------------------------*/
+    --orbita-tamanho: .35px;
+    --orbita-tempo: .14s;
+    --Rod-Gig-size: .30px;
+    --Rod-Gig-time: .35s;
+    --tamanho-bloco: .4px;
+    --blocos-time: .1s;
+    /* 2##>Cores -------------------------------------------------------------------------------------- */
+    --sombra: 0px 2px 5px rgba(54, 54, 54, 0.345);
+    --preto: #212121;
+    --preto-75: #212121bf;
+    --preto-50: #21212180;
+    --preto-25: #21212140;
+    --preto-10: #2121211a;
+    --preto-5: #2121210d;
+    --branco: #ffffff;
+    --branco-10: rgb(229.5, 229.5, 229.5);
+    --branco-20: rgb(204, 204, 204);
+    --branco-30: rgb(178.5, 178.5, 178.5);
+    --branco-40: rgb(153, 153, 153);
+    --branco-50: rgb(127.5, 127.5, 127.5);
+    --azul: #3E9EFF;
+    --rosa: #FF2C70;
+    --vermelho: #CF3000;
+    --verde: #3D8923;
+    --amarelo: #E4A500;
+    --amarelo-escuro: #bd8800;
+    --verde-escuro: #285b17;
+    --marrom: #864800;
+  }
+  /* 2##>Fontes ------------------------------------------------------------------------------------ */
+  h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.5em, 5vw, 3em);
+    line-height: 30px;
+  }
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.4em, 4vw, 28px);
+    line-height: 30px;
+  }
+  h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.3em, 3vw, 2em);
+    line-height: 30px;
+  }
+  h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  h5 {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  p {
+    font-family: "Prompt", sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  /* 1#>Nav-bar -------------------------------------------------------------------------------------- */
+  header {
+    width: 100vw;
+    height: 40px;
+    background-color: var(--branco-10);
+    padding: 0px 1.5em 0px 1.5em;
+    box-shadow: var(--sombra);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+  header > h2 {
+    z-index: 101;
+  }
+  header > span {
+    transform: scale(1.2);
+    z-index: 101;
+  }
+  #nav-bar-itens {
+    height: 100%;
+    width: 100%;
+    background-color: var(--branco);
+    padding: 4em;
+    position: fixed;
+    top: 50%;
+    left: -100%;
+    opacity: 0.94;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition-duration: 0.45s;
+  }
+  #nav-bar-itens > ul {
+    margin: 30px 0px 30px 0px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  /* 1#>Home -------------------------------------------------------------------------------------------*/
+  /* 2##>titulo-home ------------------------------------------------------------------------------------*/
+  #home h1 {
+    margin: 50px 0px 20px 0px;
+    text-align: center;
+  }
+  /* 2##>carrossel ----------------------------------------------------------------------------------- */
+  #carrossel {
+    position: relative;
+  }
+  [class^=home-seta] {
+    position: absolute;
+    top: 50%;
+    transform: scale(2) translateY(-20%);
+    z-index: 1;
+  }
+  .home-seta-direita {
+    left: 87%;
+  }
+  .home-seta-esquerda {
+    left: 8%;
+  }
+  #home > #carrossel > #carrossel-itens {
+    height: 50vh;
+    width: 300vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -100%;
+    transition-duration: 0.5s;
+    overflow-x: auto;
+  }
+  [class^=conteiner-carrossel] {
+    width: 100vw;
+    height: 50vh;
+  }
+  /* 3###>orbita ----------------------------------------------------------------------------------------*/
+  .animacao-orbita {
+    height: calc(600 * var(--orbita-tamanho));
+    width: calc(600 * var(--orbita-tamanho));
+    position: relative;
+    /* background-color: red; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: ; */
+  }
+  /* 4####>marcações-das-orbitas -----------------------------------------------------------------------*/
+  .animacao-orbita [class$=marcacao] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: calc(8 * var(--orbita-tamanho)) solid rgb(206, 206, 206);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .animacao-orbita [class^=cinco] {
+    width: calc(645 * var(--orbita-tamanho));
+    height: calc(645 * var(--orbita-tamanho));
+  }
+  .animacao-orbita [class^=quatro] {
+    width: calc(500 * var(--orbita-tamanho));
+    height: calc(500 * var(--orbita-tamanho));
+  }
+  .animacao-orbita [class^=tres] {
+    width: calc(365 * var(--orbita-tamanho));
+    height: calc(365 * var(--orbita-tamanho));
+  }
+  .animacao-orbita [class^=dois] {
+    width: calc(225 * var(--orbita-tamanho));
+    height: calc(225 * var(--orbita-tamanho));
+  }
+  .animacao-orbita [class^=um] {
+    width: calc(90 * var(--orbita-tamanho));
+    height: calc(90 * var(--orbita-tamanho));
+  }
+  /* 4####>niveis-das-orbitas ---------------------------------------------------------------------------*/
+  .animacao-orbita [class^=orbita] {
+    position: absolute;
+    left: calc(4.17% * var(--especial));
+    top: calc(4.17% * var(--especial));
+    /* background-color: rgba(0, 0, 255, 0.2); */
+    z-index: 3;
+  }
+  .animacao-orbita [class$=cinco] {
+    width: calc(500 * var(--orbita-tamanho));
+    height: calc(500 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
+  }
+  .animacao-orbita [class$=quatro] {
+    width: calc(400 * var(--orbita-tamanho));
+    height: calc(400 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
+  }
+  .animacao-orbita [class$=tres] {
+    width: calc(300 * var(--orbita-tamanho));
+    height: calc(300 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
+  }
+  .animacao-orbita [class$=dois] {
+    width: calc(200 * var(--orbita-tamanho));
+    height: calc(200 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
+  }
+  .animacao-orbita [class$=um] {
+    width: calc(100 * var(--orbita-tamanho));
+    height: calc(100 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
+  }
+  /* 4####>itens-da-orbita ------------------------------------------------------------------------------*/
+  .animacao-orbita [class^=item] {
+    position: absolute;
+    border-radius: 10%;
+  }
+  .animacao-orbita [class$=js] {
+    /* background-color: yellow; */
+    height: calc(60 * var(--orbita-tamanho));
+    width: calc(60 * var(--orbita-tamanho));
+    animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
+  }
+  .animacao-orbita [class$=css] {
+    /* background-color: blue; */
+    height: calc(75 * var(--orbita-tamanho));
+    width: calc(75 * var(--orbita-tamanho));
+    left: 103%;
+    top: 40%;
+    animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
+  }
+  .animacao-orbita [class$=html] {
+    /* background-color: orange; */
+    height: calc(50 * var(--orbita-tamanho));
+    width: calc(50 * var(--orbita-tamanho));
+    left: 78%;
+    top: 76%;
+    animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
+  }
+  /* 4####>animações-da-orbita --------------------------------------------------------------------------*/
+  @keyframes rotacao-esquerda {
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotacao-direita {
+    0% {
+      transform: rotate(-360deg);
+    }
+  }
+  /* 3###>foto-de-perfil -------------------------------------------------------------------------------*/
+  [class$=carrossel-dois] > div {
+    height: 200px;
+    width: 200px;
+    background-image: linear-gradient(150deg, blue, orange);
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* 3###>roda-gigante ------------------------------------------------------------------------------- */
+  [class$=carrossel-tres] {
+    overflow: hidden;
+  }
+  .animacao-rod-gig {
+    /* background-color: red; */
+    height: calc(600 * var(--Rod-Gig-size));
+    width: calc(600 * var(--Rod-Gig-size));
+    margin: 20px auto 0px auto;
+    position: relative;
+  }
+  /* 4####>peças-principais-rod-gig --------------------------------------------------------------------*/
+  .animacao-rod-gig .roda { /*roda pequena do meio*/
+    position: absolute;
+    height: calc(200 * var(--Rod-Gig-size));
+    width: calc(200 * var(--Rod-Gig-size));
+    border-radius: 50%;
+    left: 33.5%;
+    top: 33.5%;
+    background-color: var(--vermelho);
+    z-index: 8;
+    animation: calc(20 * var(--Rod-Gig-time)) rotacao linear reverse infinite;
+  }
+  .animacao-rod-gig .pe {
+    position: absolute;
+    height: calc(350 * var(--Rod-Gig-size));
+    width: calc(80 * var(--Rod-Gig-size));
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #2959a6;
+    z-index: 3;
+  }
+  .animacao-rod-gig .base {
+    position: absolute;
+    height: calc(100 * var(--Rod-Gig-size));
+    width: calc(400 * var(--Rod-Gig-size));
+    background-color: var(--vermelho);
+    left: 50%;
+    top: 109%;
+    transform: translateX(-50%);
+    -webkit-clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
+            clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
+  }
+  .animacao-rod-gig .aro { /*roda grande*/
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    height: calc(600 * var(--Rod-Gig-size));
+    width: calc(600 * var(--Rod-Gig-size));
+    border: calc(40 * var(--Rod-Gig-size)) solid var(--vermelho);
+    border-radius: 50%;
+    z-index: 9;
+  }
+  /* 4####>raios-rod-gig -------------------------------------------------------------------------------*/
+  .animacao-rod-gig [class^=raio] { /*todos os raios*/
+    position: absolute;
+    width: calc(40 * var(--Rod-Gig-size));
+    height: calc(598 * var(--Rod-Gig-size));
+    background-color: var(--marrom);
+  }
+  .animacao-rod-gig .roda > [class$=um] { /*raio um*/
+    transform: rotate(90deg);
+    top: -100%;
+    left: 40%;
+  }
+  .animacao-rod-gig .roda > [class$=dois] { /*raio dois*/
+    transform: rotate(180deg);
+    top: -100%;
+    left: 41%;
+  }
+  .animacao-rod-gig .roda > [class$=tres] { /*raio tres*/
+    transform: rotate(45deg);
+    top: -100%;
+    left: 40%;
+  }
+  .animacao-rod-gig .roda > [class$=quatro] { /*raio quatro*/
+    transform: rotate(-45deg);
+    top: -100%;
+    left: 40%;
+  }
+  /* 4####>estrelas-rod-gig ----------------------------------------------------------------------------*/
+  .animacao-rod-gig [class$=estrela] {
+    position: absolute;
+    background-color: var(--amarelo);
+    height: calc(150 * var(--Rod-Gig-size));
+    width: calc(150 * var(--Rod-Gig-size));
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: -1;
+  }
+  .animacao-rod-gig .aro > [class^=um] {
+    top: -4%;
+    left: -4%;
+    transform: rotate(-45deg);
+  }
+  .animacao-rod-gig .aro > [class^=dois] {
+    top: 74%;
+    left: 75%;
+    transform: rotate(60deg);
+  }
+  .animacao-rod-gig .aro > [class^=tres] {
+    top: -4%;
+    left: 74%;
+    transform: rotate(40deg);
+  }
+  .animacao-rod-gig .aro > [class^=quatro] {
+    top: 75%;
+    left: -3%;
+    transform: rotate(80deg);
+  }
+  /* 4####>carrinhos-rod-gig ------------------------------------------------------------------------*/
+  .animacao-rod-gig [class^=carrinho] { /*todos os carrinhos*/
+    position: absolute;
+    height: calc(100 * var(--Rod-Gig-size));
+    width: calc(100 * var(--Rod-Gig-size));
+    border-radius: 50%;
+    background-color: var(--azul);
+    animation: rotacao calc(20 * var(--Rod-Gig-time)) infinite linear;
+  }
+  .animacao-rod-gig .aro > [class$=um] { /*carrinho um*/
+    left: 40%;
+    top: -12%;
+  }
+  .animacao-rod-gig .aro > [class$=dois] { /*carrinho dois*/
+    top: 41%;
+    left: 93%;
+  }
+  .animacao-rod-gig .aro > [class$=tres] { /*carrinho tres*/
+    top: 95%;
+    left: 40%;
+  }
+  .animacao-rod-gig .aro > [class$=quatro] { /*carrinho quatro*/
+    top: 40%;
+    left: -13%;
+  }
+  /* 4####>peças-carrinhos-rof-gig ---------------------------------------------------------------------*/
+  .animacao-rod-gig .aro .triangulo { /*triangulo do carrinho*/
+    position: absolute;
+    height: calc(60 * var(--Rod-Gig-size));
+    width: calc(160 * var(--Rod-Gig-size));
+    -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+            clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    background-color: var(--amarelo);
+    top: 16%;
+    left: -29%;
+  }
+  .animacao-rod-gig .aro .teto { /*barra horizontal do carrinho*/
+    position: absolute;
+    width: calc(180 * var(--Rod-Gig-size));
+    height: calc(20 * var(--Rod-Gig-size));
+    background-color: var(--amarelo-escuro);
+    border-radius: 50px;
+    top: 62%;
+    left: -37%;
+    z-index: 3;
+  }
+  .animacao-rod-gig [class^=barra] { /*todas as barras verticais dos caarrinhos*/
+    position: absolute;
+    height: calc(50 * var(--Rod-Gig-size));
+    width: calc(10 * var(--Rod-Gig-size));
+    background-color: var(--marrom);
+    z-index: 2;
+  }
+  .animacao-rod-gig [class^=carrinho] > [class$=um] { /* barra vertical um*/
+    top: 82%;
+    left: -10%;
+    z-index: 300;
+  }
+  .animacao-rod-gig [class^=carrinho] > [class$=dois] { /* barra vertical dois*/
+    top: 73%;
+    left: 105%;
+  }
+  .animacao-rod-gig [class^=carrinho] > [class$=tres] { /* barra vertical tres*/
+    top: 82%;
+    left: 81%;
+    z-index: 6;
+  }
+  .animacao-rod-gig [class^=carrinho] > [class$=quatro] { /* barra vertical quatro*/
+    top: 80%;
+    left: 18%;
+  }
+  .animacao-rod-gig .dentro {
+    position: absolute;
+    width: calc(100 * var(--Rod-Gig-size));
+    height: calc(10 * var(--Rod-Gig-size));
+    background-color: #2959a6;
+    transform: skewX(-70deg);
+    top: 122%;
+    left: 3%;
+    z-index: 5;
+  }
+  .animacao-rod-gig .frente {
+    position: absolute;
+    width: calc(100 * var(--Rod-Gig-size));
+    height: calc(50 * var(--Rod-Gig-size));
+    background-color: var(--azul);
+    top: 131%;
+    left: -9.5%;
+  }
+  .animacao-rod-gig .lado {
+    position: absolute;
+    height: calc(50 * var(--Rod-Gig-size));
+    width: calc(25 * var(--Rod-Gig-size));
+    background-color: #3473d9;
+    transform: skewy(-20deg);
+    top: 127%;
+    left: 90.5%;
+  }
+  /* 4####>animação-rod-gig ----------------------------------------------------------------------------*/
+  @keyframes rotacao {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* 2##>paragrafo-home -------------------------------------------------------------------------------- */
+  #home > p {
+    text-align: center;
+    padding: 0px 10px;
+    margin: auto;
+    width: clamp(300px, 55vw, 450px);
+  }
+  #home > p::after {
+    content: " computador.";
+  }
+  /* 1#>sobre-min --------------------------------------------------------------------------------------*/
+  /* 2##>titulo ----------------------------------------------------------------------------------------*/
+  #sobre-min > h2 {
+    margin: 0px 0px 10px 16px;
+  }
+  /* 2##>blocos ----------------------------------------------------------------------------------------*/
+  .blocos {
+    height: 93%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .blocos h2 {
+    margin-top: calc(var(--tamanho-bloco) * 20);
+  }
+  .blocos p {
+    font-size: calc(var(--tamanho-bloco) * 40);
+  }
+  .blocos span {
+    transform: scale(2.5);
+    cursor: default;
+  }
+  .blocos .bloco {
+    width: calc(var(--tamanho-bloco) * 700);
+    height: calc(var(--tamanho-bloco) * 200);
+    display: flex;
+  }
+  .row-reverse {
+    flex-direction: row-reverse !important;
+  }
+  /* 3###>setas-blocos ----------------------------------------------------------------------------------*/
+  .blocos .setas {
+    width: calc(var(--tamanho-bloco) * 200);
+    height: calc(var(--tamanho-bloco) * 200);
+    top: -4.5%;
+    position: relative;
+    transition-duration: calc(4 * var(--blocos-time));
+    /* background-color: yellow; */
+    transform-style: preserve-3d;
+  }
+  .blocos .para-cima {
+    width: calc(var(--tamanho-bloco) * 200);
+    height: calc(var(--tamanho-bloco) * 200);
+    position: absolute;
+    text-align: center;
+    padding-top: calc(70 * var(--tamanho-bloco));
+    transform-origin: bottom;
+  }
+  .blocos .para-baixo {
+    width: calc(var(--tamanho-bloco) * 200);
+    height: calc(var(--tamanho-bloco) * 200);
+    position: relative;
+    text-align: center;
+    padding-top: calc(70 * var(--tamanho-bloco));
+    background-color: var(--branco-20);
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+  }
+  /* 3###>textos-blocos --------------------------------------------------------------------------------*/
+  .blocos .texto {
+    width: calc(var(--tamanho-bloco) * 500);
+    height: calc(var(--tamanho-bloco) * 200);
+    top: -4.5%;
+    position: relative;
+    transition-duration: calc(4 * var(--blocos-time));
+    /* background-color: lightgray; */
+    transform-style: preserve-3d;
+  }
+  .blocos .frente {
+    width: calc(var(--tamanho-bloco) * 500);
+    height: calc(var(--tamanho-bloco) * 200);
+    padding-top: calc(var(--tamanho-bloco) * 40);
+    position: absolute;
+    /* background-color: red; */
+    background-color: var(--branco-20);
+    text-align: center;
+    transform-origin: top;
+  }
+  .blocos .emcima {
+    width: calc(var(--tamanho-bloco) * 500);
+    height: calc(var(--tamanho-bloco) * 200);
+    padding-bottom: calc(var(--tamanho-bloco) * 120);
+    position: absolute;
+    /* background-color: blue; */
+    transform: rotateX(90deg);
+    transform-origin: top;
+  }
+  .blocos .invertido {
+    top: 15%;
+    position: relative;
+    text-align: center;
+    transform: rotateX(180deg);
+  }
+  /* 1#>conhecimentos ----------------------------------------------------------------------------------*/
+  /* 2##>titulo ----------------------------------------------------------------------------------------- */
+  #conhecimentos > h2 {
+    text-align: right;
+    margin: 0px 16px 16px 0px;
+  }
+  /* 2##>barras-seletoras ------------------------------------------------------------------------------*/
+  #conhecimentos [class^=barra-seletora] {
+    height: 40px;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #conhecimentos .barra-seletora-um {
+    background-color: var(--rosa);
+  }
+  #conhecimentos .barra-seletora-dois {
+    background-color: var(--azul);
+  }
+  #conhecimentos .seletor {
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+  /* 2##>texto-conhecimentos ---------------------------------------------------------------------------*/
+  .conhecimentos-texto {
+    margin-top: 20px;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  /* 3###>texto ----------------------------------------------------------------------------------------*/
+  #conhecimentos #paragrafo {
+    font-size: 14px;
+    width: clamp(200px, 45vw, 620px);
+    margin: auto;
+  }
+  /* 3###>grafico ---------------------------------------------------------------------------------------*/
+  #grafico {
+    height: 350px;
+    width: 30%;
+  }
+  #grafico .porcentagem {
+    height: 350px;
+    width: clamp(50px, 15vw, 100px);
+    background-color: var(--branco-40);
+    position: relative;
+    margin: auto;
+    display: flex;
+    border-radius: 15px;
+  }
+  .quantidade {
+    height: 234px;
+    width: clamp(50px, 15vw, 100px);
+    background-color: var(--amarelo);
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+    border-radius: 15px;
+    transition-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+  }
+  #grafico #barras {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #grafico #numeros {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  #grafico [class^=barra] {
+    width: 30px;
+    height: 2px;
+    background-color: #212121;
+    position: relative;
+    left: -25%;
+  }
+  #grafico [class^=numero] {
+    width: 10px;
+    height: 10px;
+    font-weight: bolder;
+    position: relative;
+    left: 10%;
+    top: -2%;
+  }
+  /* 1#>projetos ----------------------------------------------------------------------------------------*/
+  /* 2##>titulo ----------------------------------------------------------------------------------------*/
+  #projetos h2 {
+    margin: 0px 0px 30px 8px;
+  }
+  /* 2##>game-boy ---------------------------------------------------------------------------------------*/
+  #game-boy {
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #game-boy .fundo {
+    height: 80vh;
+    width: 80vw;
+    background-color: var(--verde);
+    box-shadow: 3px 7px 0px var(--verde-escuro);
+    border-radius: 25px;
+    padding: 20px 0px;
+  }
+  /* 3###>tela ------------------------------------------------------------------------------------------*/
+  #game-boy #tela {
+    height: 50vh;
+    width: 70vw;
+    background-color: var(--preto);
+    margin: auto;
+    overflow-x: hidden;
+  }
+  #game-boy #desligado {
+    width: 70vw;
+    height: 50vh;
+    background-color: var(--preto);
+    position: absolute;
+    display: none;
+  }
+  #projetos .projetos {
+    /* position: absolute; */
+    display: flex;
+  }
+  #projetos .projetos .projeto {
+    height: 50vh;
+    width: 70vw;
+    border-radius: 30px;
+    display: none;
+  }
+  /* 3###>botões ---------------------------------------------------------------------------------------*/
+  #game-boy #botoes {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #game-boy span {
+    font-weight: 800;
+    font-size: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+  #game-boy [class$=direita] span {
+    transform: rotate(90deg);
+  }
+  #game-boy [class$=esquerda] span {
+    transform: rotate(-90deg);
+  }
+  #game-boy [class^=botao] {
+    width: 60px;
+    border-radius: 30px;
+    background-color: var(--amarelo);
+    box-shadow: 3px 7px 0px var(--amarelo-escuro);
+    position: relative;
+    transition-duration: 0.1s;
+  }
+  #game-boy [class*=seta] {
+    height: 60px;
+  }
+  #game-boy .botao-start {
+    height: 30px;
+    padding-top: 3px;
+    text-align: center;
+  }
+  /* 1#>roda-pé ----------------------------------------------------------------------------------------*/
+  footer {
+    width: 100%;
+    height: 300px;
+    background-color: var(--branco-20);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* 2##>textos -----------------------------------------------------------------------------------------*/
+  /* 3##>texto-um ---------------------------------------------------------------------------------------*/
+  footer .texto-um {
+    margin-bottom: 20px;
+  }
+  /* 3##>texto-dois -------------------------------------------------------------------------------------*/
+  /* 2##>contatos --------------------------------------------------------------------------------------*/
+  footer #divisor {
+    font-weight: 700;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  footer #divisor::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 170%;
+    background-color: var(--preto);
+    position: relative;
+    top: -12px;
+    left: 110%;
+  }
+  footer [class^=contato] {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #home > p {
+    margin: 25px auto;
+  }
+  #home > #carrossel-itens {
+    transition-duration: 4s;
+  }
+}/*# sourceMappingURL=main.css.map */
