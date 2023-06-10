@@ -187,14 +187,14 @@
     align-items: center;
     z-index: 100;
   }
-  header > h2 {
+  header h2 {
     z-index: 101;
   }
-  header > span {
+  header span {
     transform: scale(1.2);
     z-index: 101;
   }
-  #nav-bar-itens {
+  header li {
     height: 100%;
     width: 100%;
     background-color: var(--branco);
@@ -210,34 +210,31 @@
     align-items: center;
     transition-duration: 0.45s;
   }
-  #nav-bar-itens > ul {
+  header li ul {
     margin: 30px 0px 30px 0px;
     width: -moz-fit-content;
     width: fit-content;
   }
-  /* 1#>Home -------------------------------------------------------------------------------------------*/
-  /* 2##>titulo-home ------------------------------------------------------------------------------------*/
-  #home h1 {
+  main #home h1 {
     margin: 50px 0px 20px 0px;
     text-align: center;
   }
-  /* 2##>carrossel ----------------------------------------------------------------------------------- */
-  #carrossel {
+  main #home #carrossel {
     position: relative;
   }
-  [class^=home-seta] {
+  main #home #carrossel [class^=home-seta] {
     position: absolute;
     top: 50%;
     transform: scale(2) translateY(-20%);
     z-index: 1;
   }
-  .home-seta-direita {
+  main #home #carrossel .home-seta-direita {
     left: 87%;
   }
-  .home-seta-esquerda {
+  main #home #carrossel .home-seta-esquerda {
     left: 8%;
   }
-  #home > #carrossel > #carrossel-itens {
+  main #home #carrossel-itens {
     height: 50vh;
     width: 300vw;
     display: flex;
@@ -247,12 +244,11 @@
     transition-duration: 0.5s;
     overflow-x: auto;
   }
-  [class^=conteiner-carrossel] {
+  main #home [class^=conteiner-carrossel] {
     width: 100vw;
     height: 50vh;
   }
-  /* 3###>orbita ----------------------------------------------------------------------------------------*/
-  .animacao-orbita {
+  main #home .conteiner-carrossel-um .animacao-orbita {
     height: calc(600 * var(--orbita-tamanho));
     width: calc(600 * var(--orbita-tamanho));
     position: relative;
@@ -262,8 +258,7 @@
     transform: translate(-50%, -50%);
     /* transform: ; */
   }
-  /* 4####>marcações-das-orbitas -----------------------------------------------------------------------*/
-  .animacao-orbita [class$=marcacao] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=marcacao] {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -272,71 +267,69 @@
     border-radius: 50%;
     z-index: 2;
   }
-  .animacao-orbita [class^=cinco] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=cinco] {
     width: calc(645 * var(--orbita-tamanho));
     height: calc(645 * var(--orbita-tamanho));
   }
-  .animacao-orbita [class^=quatro] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=quatro] {
     width: calc(500 * var(--orbita-tamanho));
     height: calc(500 * var(--orbita-tamanho));
   }
-  .animacao-orbita [class^=tres] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=tres] {
     width: calc(365 * var(--orbita-tamanho));
     height: calc(365 * var(--orbita-tamanho));
   }
-  .animacao-orbita [class^=dois] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=dois] {
     width: calc(225 * var(--orbita-tamanho));
     height: calc(225 * var(--orbita-tamanho));
   }
-  .animacao-orbita [class^=um] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=um] {
     width: calc(90 * var(--orbita-tamanho));
     height: calc(90 * var(--orbita-tamanho));
   }
-  /* 4####>niveis-das-orbitas ---------------------------------------------------------------------------*/
-  .animacao-orbita [class^=orbita] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=orbita] {
     position: absolute;
     left: calc(4.17% * var(--especial));
     top: calc(4.17% * var(--especial));
     /* background-color: rgba(0, 0, 255, 0.2); */
     z-index: 3;
   }
-  .animacao-orbita [class$=cinco] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=cinco] {
     width: calc(500 * var(--orbita-tamanho));
     height: calc(500 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  .animacao-orbita [class$=quatro] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=quatro] {
     width: calc(400 * var(--orbita-tamanho));
     height: calc(400 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  .animacao-orbita [class$=tres] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=tres] {
     width: calc(300 * var(--orbita-tamanho));
     height: calc(300 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  .animacao-orbita [class$=dois] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=dois] {
     width: calc(200 * var(--orbita-tamanho));
     height: calc(200 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  .animacao-orbita [class$=um] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=um] {
     width: calc(100 * var(--orbita-tamanho));
     height: calc(100 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  /* 4####>itens-da-orbita ------------------------------------------------------------------------------*/
-  .animacao-orbita [class^=item] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class^=item] {
     position: absolute;
     border-radius: 10%;
   }
-  .animacao-orbita [class$=js] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=js] {
     /* background-color: yellow; */
     height: calc(60 * var(--orbita-tamanho));
     width: calc(60 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  .animacao-orbita [class$=css] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=css] {
     /* background-color: blue; */
     height: calc(75 * var(--orbita-tamanho));
     width: calc(75 * var(--orbita-tamanho));
@@ -344,7 +337,7 @@
     top: 40%;
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  .animacao-orbita [class$=html] {
+  main #home .conteiner-carrossel-um .animacao-orbita [class$=html] {
     /* background-color: orange; */
     height: calc(50 * var(--orbita-tamanho));
     width: calc(50 * var(--orbita-tamanho));
@@ -352,7 +345,6 @@
     top: 76%;
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  /* 4####>animações-da-orbita --------------------------------------------------------------------------*/
   @keyframes rotacao-esquerda {
     0% {
       transform: rotate(360deg);
@@ -363,8 +355,7 @@
       transform: rotate(-360deg);
     }
   }
-  /* 3###>foto-de-perfil -------------------------------------------------------------------------------*/
-  [class$=carrossel-dois] > div {
+  main #home .conteiner-carrossel-dois div {
     height: 200px;
     width: 200px;
     background-image: linear-gradient(150deg, blue, orange);
@@ -374,19 +365,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  /* 3###>roda-gigante ------------------------------------------------------------------------------- */
-  [class$=carrossel-tres] {
+  main #home .conteiner-carrossel-tres {
     overflow: hidden;
   }
-  .animacao-rod-gig {
+  main #home .conteiner-carrossel-tres .animacao-rod-gig {
     /* background-color: red; */
     height: calc(600 * var(--Rod-Gig-size));
     width: calc(600 * var(--Rod-Gig-size));
     margin: 20px auto 0px auto;
     position: relative;
   }
-  /* 4####>peças-principais-rod-gig --------------------------------------------------------------------*/
-  .animacao-rod-gig .roda { /*roda pequena do meio*/
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda { /*roda pequena do meio*/
     position: absolute;
     height: calc(200 * var(--Rod-Gig-size));
     width: calc(200 * var(--Rod-Gig-size));
@@ -397,7 +386,158 @@
     z-index: 8;
     animation: calc(20 * var(--Rod-Gig-time)) rotacao linear reverse infinite;
   }
-  .animacao-rod-gig .pe {
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class^=raio] { /*todos os raios*/
+    position: absolute;
+    width: calc(40 * var(--Rod-Gig-size));
+    height: calc(598 * var(--Rod-Gig-size));
+    background-color: var(--marrom);
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=um] { /*raio um*/
+    transform: rotate(90deg);
+    top: -100%;
+    left: 40%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=dois] { /*raio dois*/
+    transform: rotate(180deg);
+    top: -100%;
+    left: 41%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=tres] { /*raio tres*/
+    transform: rotate(45deg);
+    top: -100%;
+    left: 40%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=quatro] { /*raio quatro*/
+    transform: rotate(-45deg);
+    top: -100%;
+    left: 40%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro { /*roda grande*/
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    height: calc(600 * var(--Rod-Gig-size));
+    width: calc(600 * var(--Rod-Gig-size));
+    border: calc(40 * var(--Rod-Gig-size)) solid var(--vermelho);
+    border-radius: 50%;
+    z-index: 9;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] { /*todos os carrinhos*/
+    position: absolute;
+    height: calc(100 * var(--Rod-Gig-size));
+    width: calc(100 * var(--Rod-Gig-size));
+    border-radius: 50%;
+    background-color: var(--azul);
+    animation: rotacao calc(20 * var(--Rod-Gig-time)) infinite linear;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .triangulo { /*triangulo do carrinho*/
+    position: absolute;
+    height: calc(60 * var(--Rod-Gig-size));
+    width: calc(160 * var(--Rod-Gig-size));
+    -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+            clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    background-color: var(--amarelo);
+    top: 16%;
+    left: -29%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .teto { /*barra horizontal do carrinho*/
+    position: absolute;
+    width: calc(180 * var(--Rod-Gig-size));
+    height: calc(20 * var(--Rod-Gig-size));
+    background-color: var(--amarelo-escuro);
+    border-radius: 50px;
+    top: 62%;
+    left: -37%;
+    z-index: 3;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .frente {
+    position: absolute;
+    width: calc(100 * var(--Rod-Gig-size));
+    height: calc(50 * var(--Rod-Gig-size));
+    background-color: var(--azul);
+    top: 131%;
+    left: -9.5%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .lado {
+    position: absolute;
+    height: calc(50 * var(--Rod-Gig-size));
+    width: calc(25 * var(--Rod-Gig-size));
+    background-color: #3473d9;
+    transform: skewy(-20deg);
+    top: 127%;
+    left: 90.5%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] [class^=barra] { /*todas as barras verticais dos caarrinhos*/
+    position: absolute;
+    height: calc(50 * var(--Rod-Gig-size));
+    width: calc(10 * var(--Rod-Gig-size));
+    background-color: var(--marrom);
+    z-index: 2;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=um] { /* barra vertical um*/
+    top: 82%;
+    left: -10%;
+    z-index: 300;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=dois] { /* barra vertical dois*/
+    top: 73%;
+    left: 105%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=tres] { /* barra vertical tres*/
+    top: 82%;
+    left: 81%;
+    z-index: 6;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=quatro] { /* barra vertical quatro*/
+    top: 80%;
+    left: 18%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=um] { /*carrinho um*/
+    left: 40%;
+    top: -12%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=dois] { /*carrinho dois*/
+    top: 41%;
+    left: 93%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=tres] { /*carrinho tres*/
+    top: 95%;
+    left: 40%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=quatro] { /*carrinho quatro*/
+    top: 40%;
+    left: -13%;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class$=estrela] { /*todas as estrelas*/
+    position: absolute;
+    background-color: var(--amarelo);
+    height: calc(150 * var(--Rod-Gig-size));
+    width: calc(150 * var(--Rod-Gig-size));
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: -1;
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=um] {
+    top: -4%;
+    left: -4%;
+    transform: rotate(-45deg);
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=dois] {
+    top: 74%;
+    left: 75%;
+    transform: rotate(60deg);
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=tres] {
+    top: -4%;
+    left: 74%;
+    transform: rotate(40deg);
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=quatro] {
+    top: 75%;
+    left: -3%;
+    transform: rotate(80deg);
+  }
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .pe {
     position: absolute;
     height: calc(350 * var(--Rod-Gig-size));
     width: calc(80 * var(--Rod-Gig-size));
@@ -407,7 +547,7 @@
     background-color: #2959a6;
     z-index: 3;
   }
-  .animacao-rod-gig .base {
+  main #home .conteiner-carrossel-tres .animacao-rod-gig .base {
     position: absolute;
     height: calc(100 * var(--Rod-Gig-size));
     width: calc(400 * var(--Rod-Gig-size));
@@ -418,172 +558,6 @@
     -webkit-clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
             clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
   }
-  .animacao-rod-gig .aro { /*roda grande*/
-    position: absolute;
-    left: -100%;
-    top: -100%;
-    height: calc(600 * var(--Rod-Gig-size));
-    width: calc(600 * var(--Rod-Gig-size));
-    border: calc(40 * var(--Rod-Gig-size)) solid var(--vermelho);
-    border-radius: 50%;
-    z-index: 9;
-  }
-  /* 4####>raios-rod-gig -------------------------------------------------------------------------------*/
-  .animacao-rod-gig [class^=raio] { /*todos os raios*/
-    position: absolute;
-    width: calc(40 * var(--Rod-Gig-size));
-    height: calc(598 * var(--Rod-Gig-size));
-    background-color: var(--marrom);
-  }
-  .animacao-rod-gig .roda > [class$=um] { /*raio um*/
-    transform: rotate(90deg);
-    top: -100%;
-    left: 40%;
-  }
-  .animacao-rod-gig .roda > [class$=dois] { /*raio dois*/
-    transform: rotate(180deg);
-    top: -100%;
-    left: 41%;
-  }
-  .animacao-rod-gig .roda > [class$=tres] { /*raio tres*/
-    transform: rotate(45deg);
-    top: -100%;
-    left: 40%;
-  }
-  .animacao-rod-gig .roda > [class$=quatro] { /*raio quatro*/
-    transform: rotate(-45deg);
-    top: -100%;
-    left: 40%;
-  }
-  /* 4####>estrelas-rod-gig ----------------------------------------------------------------------------*/
-  .animacao-rod-gig [class$=estrela] {
-    position: absolute;
-    background-color: var(--amarelo);
-    height: calc(150 * var(--Rod-Gig-size));
-    width: calc(150 * var(--Rod-Gig-size));
-    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    z-index: -1;
-  }
-  .animacao-rod-gig .aro > [class^=um] {
-    top: -4%;
-    left: -4%;
-    transform: rotate(-45deg);
-  }
-  .animacao-rod-gig .aro > [class^=dois] {
-    top: 74%;
-    left: 75%;
-    transform: rotate(60deg);
-  }
-  .animacao-rod-gig .aro > [class^=tres] {
-    top: -4%;
-    left: 74%;
-    transform: rotate(40deg);
-  }
-  .animacao-rod-gig .aro > [class^=quatro] {
-    top: 75%;
-    left: -3%;
-    transform: rotate(80deg);
-  }
-  /* 4####>carrinhos-rod-gig ------------------------------------------------------------------------*/
-  .animacao-rod-gig [class^=carrinho] { /*todos os carrinhos*/
-    position: absolute;
-    height: calc(100 * var(--Rod-Gig-size));
-    width: calc(100 * var(--Rod-Gig-size));
-    border-radius: 50%;
-    background-color: var(--azul);
-    animation: rotacao calc(20 * var(--Rod-Gig-time)) infinite linear;
-  }
-  .animacao-rod-gig .aro > [class$=um] { /*carrinho um*/
-    left: 40%;
-    top: -12%;
-  }
-  .animacao-rod-gig .aro > [class$=dois] { /*carrinho dois*/
-    top: 41%;
-    left: 93%;
-  }
-  .animacao-rod-gig .aro > [class$=tres] { /*carrinho tres*/
-    top: 95%;
-    left: 40%;
-  }
-  .animacao-rod-gig .aro > [class$=quatro] { /*carrinho quatro*/
-    top: 40%;
-    left: -13%;
-  }
-  /* 4####>peças-carrinhos-rof-gig ---------------------------------------------------------------------*/
-  .animacao-rod-gig .aro .triangulo { /*triangulo do carrinho*/
-    position: absolute;
-    height: calc(60 * var(--Rod-Gig-size));
-    width: calc(160 * var(--Rod-Gig-size));
-    -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-            clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    background-color: var(--amarelo);
-    top: 16%;
-    left: -29%;
-  }
-  .animacao-rod-gig .aro .teto { /*barra horizontal do carrinho*/
-    position: absolute;
-    width: calc(180 * var(--Rod-Gig-size));
-    height: calc(20 * var(--Rod-Gig-size));
-    background-color: var(--amarelo-escuro);
-    border-radius: 50px;
-    top: 62%;
-    left: -37%;
-    z-index: 3;
-  }
-  .animacao-rod-gig [class^=barra] { /*todas as barras verticais dos caarrinhos*/
-    position: absolute;
-    height: calc(50 * var(--Rod-Gig-size));
-    width: calc(10 * var(--Rod-Gig-size));
-    background-color: var(--marrom);
-    z-index: 2;
-  }
-  .animacao-rod-gig [class^=carrinho] > [class$=um] { /* barra vertical um*/
-    top: 82%;
-    left: -10%;
-    z-index: 300;
-  }
-  .animacao-rod-gig [class^=carrinho] > [class$=dois] { /* barra vertical dois*/
-    top: 73%;
-    left: 105%;
-  }
-  .animacao-rod-gig [class^=carrinho] > [class$=tres] { /* barra vertical tres*/
-    top: 82%;
-    left: 81%;
-    z-index: 6;
-  }
-  .animacao-rod-gig [class^=carrinho] > [class$=quatro] { /* barra vertical quatro*/
-    top: 80%;
-    left: 18%;
-  }
-  .animacao-rod-gig .dentro {
-    position: absolute;
-    width: calc(100 * var(--Rod-Gig-size));
-    height: calc(10 * var(--Rod-Gig-size));
-    background-color: #2959a6;
-    transform: skewX(-70deg);
-    top: 122%;
-    left: 3%;
-    z-index: 5;
-  }
-  .animacao-rod-gig .frente {
-    position: absolute;
-    width: calc(100 * var(--Rod-Gig-size));
-    height: calc(50 * var(--Rod-Gig-size));
-    background-color: var(--azul);
-    top: 131%;
-    left: -9.5%;
-  }
-  .animacao-rod-gig .lado {
-    position: absolute;
-    height: calc(50 * var(--Rod-Gig-size));
-    width: calc(25 * var(--Rod-Gig-size));
-    background-color: #3473d9;
-    transform: skewy(-20deg);
-    top: 127%;
-    left: 90.5%;
-  }
-  /* 4####>animação-rod-gig ----------------------------------------------------------------------------*/
   @keyframes rotacao {
     0% {
       transform: rotate(0deg);
@@ -592,48 +566,43 @@
       transform: rotate(360deg);
     }
   }
-  /* 2##>paragrafo-home -------------------------------------------------------------------------------- */
-  #home > p {
+  main #home > p {
     text-align: center;
     padding: 0px 10px;
     margin: auto;
     width: clamp(300px, 55vw, 450px);
   }
-  #home > p::after {
+  main #home > p::after {
     content: " computador.";
   }
-  /* 1#>sobre-min --------------------------------------------------------------------------------------*/
-  /* 2##>titulo ----------------------------------------------------------------------------------------*/
-  #sobre-min > h2 {
+  main #sobre-min h2 {
     margin: 0px 0px 10px 16px;
   }
-  /* 2##>blocos ----------------------------------------------------------------------------------------*/
-  .blocos {
+  main #sobre-min .blocos {
     height: 93%;
     width: 100%;
     display: grid;
     place-items: center;
   }
-  .blocos h2 {
+  main #sobre-min .blocos h2 {
     margin-top: calc(var(--tamanho-bloco) * 20);
   }
-  .blocos p {
+  main #sobre-min .blocos p {
     font-size: calc(var(--tamanho-bloco) * 40);
   }
-  .blocos span {
+  main #sobre-min .blocos span {
     transform: scale(2.5);
     cursor: default;
   }
-  .blocos .bloco {
+  main #sobre-min .blocos .bloco {
     width: calc(var(--tamanho-bloco) * 700);
     height: calc(var(--tamanho-bloco) * 200);
     display: flex;
   }
-  .row-reverse {
+  main #sobre-min .blocos .row-reverse {
     flex-direction: row-reverse !important;
   }
-  /* 3###>setas-blocos ----------------------------------------------------------------------------------*/
-  .blocos .setas {
+  main #sobre-min .blocos .setas {
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     top: -4.5%;
@@ -642,7 +611,7 @@
     /* background-color: yellow; */
     transform-style: preserve-3d;
   }
-  .blocos .para-cima {
+  main #sobre-min .blocos .para-cima {
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     position: absolute;
@@ -650,7 +619,7 @@
     padding-top: calc(70 * var(--tamanho-bloco));
     transform-origin: bottom;
   }
-  .blocos .para-baixo {
+  main #sobre-min .blocos .para-baixo {
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     position: relative;
@@ -660,8 +629,7 @@
     transform-origin: bottom;
     transform: rotateX(90deg);
   }
-  /* 3###>textos-blocos --------------------------------------------------------------------------------*/
-  .blocos .texto {
+  main #sobre-min .blocos .texto {
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
     top: -4.5%;
@@ -670,7 +638,7 @@
     /* background-color: lightgray; */
     transform-style: preserve-3d;
   }
-  .blocos .frente {
+  main #sobre-min .blocos .frente {
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
     padding-top: calc(var(--tamanho-bloco) * 40);
@@ -680,7 +648,7 @@
     text-align: center;
     transform-origin: top;
   }
-  .blocos .emcima {
+  main #sobre-min .blocos .emcima {
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
     padding-bottom: calc(var(--tamanho-bloco) * 120);
@@ -689,40 +657,36 @@
     transform: rotateX(90deg);
     transform-origin: top;
   }
-  .blocos .invertido {
+  main #sobre-min .blocos .invertido {
     top: 15%;
     position: relative;
     text-align: center;
     transform: rotateX(180deg);
   }
-  /* 1#>conhecimentos ----------------------------------------------------------------------------------*/
-  /* 2##>titulo ----------------------------------------------------------------------------------------- */
-  #conhecimentos > h2 {
+  main #conhecimentos > h2 {
     text-align: right;
     margin: 0px 16px 16px 0px;
   }
-  /* 2##>barras-seletoras ------------------------------------------------------------------------------*/
-  #conhecimentos [class^=barra-seletora] {
+  main #conhecimentos [class^=barra-seletora] {
     height: 40px;
     padding: 0px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  #conhecimentos .barra-seletora-um {
+  main #conhecimentos .barra-seletora-um {
     background-color: var(--rosa);
   }
-  #conhecimentos .barra-seletora-dois {
+  main #conhecimentos .barra-seletora-dois {
     background-color: var(--azul);
   }
-  #conhecimentos .seletor {
+  main #conhecimentos .seletor {
     height: 30px;
     border-radius: 15px;
     text-align: center;
     font-weight: 600;
   }
-  /* 2##>texto-conhecimentos ---------------------------------------------------------------------------*/
-  .conhecimentos-texto {
+  main #conhecimentos .conhecimentos-texto {
     margin-top: 20px;
     padding: 0px 16px;
     display: flex;
@@ -730,18 +694,16 @@
     justify-content: space-between;
     flex-direction: row-reverse;
   }
-  /* 3###>texto ----------------------------------------------------------------------------------------*/
-  #conhecimentos #paragrafo {
+  main #conhecimentos .conhecimentos-texto #paragrafo {
     font-size: 14px;
     width: clamp(200px, 45vw, 620px);
     margin: auto;
   }
-  /* 3###>grafico ---------------------------------------------------------------------------------------*/
-  #grafico {
+  main #conhecimentos .conhecimentos-texto #grafico {
     height: 350px;
     width: 30%;
   }
-  #grafico .porcentagem {
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem {
     height: 350px;
     width: clamp(50px, 15vw, 100px);
     background-color: var(--branco-40);
@@ -750,7 +712,7 @@
     display: flex;
     border-radius: 15px;
   }
-  .quantidade {
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem .quantidade {
     height: 234px;
     width: clamp(50px, 15vw, 100px);
     background-color: var(--amarelo);
@@ -761,14 +723,21 @@
     transition-duration: 1.4s;
     animation-timing-function: ease-in-out;
   }
-  #grafico #barras {
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #barras {
     height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  #grafico #numeros {
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #barras [class^=barra] {
+    width: 30px;
+    height: 2px;
+    background-color: #212121;
+    position: relative;
+    left: -25%;
+  }
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #numeros {
     height: 100%;
     width: 50%;
     display: flex;
@@ -776,14 +745,7 @@
     justify-content: space-between;
     align-items: flex-end;
   }
-  #grafico [class^=barra] {
-    width: 30px;
-    height: 2px;
-    background-color: #212121;
-    position: relative;
-    left: -25%;
-  }
-  #grafico [class^=numero] {
+  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #numeros [class^=numero] {
     width: 10px;
     height: 10px;
     font-weight: bolder;
@@ -791,20 +753,17 @@
     left: 10%;
     top: -2%;
   }
-  /* 1#>projetos ----------------------------------------------------------------------------------------*/
-  /* 2##>titulo ----------------------------------------------------------------------------------------*/
-  #projetos h2 {
+  main #projetos h2 {
     margin: 0px 0px 30px 8px;
   }
-  /* 2##>game-boy ---------------------------------------------------------------------------------------*/
-  #game-boy {
+  main #projetos #game-boy {
     margin: auto;
     height: -moz-fit-content;
     height: fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
-  #game-boy .fundo {
+  main #projetos #game-boy .fundo {
     height: 80vh;
     width: 80vw;
     background-color: var(--verde);
@@ -812,52 +771,50 @@
     border-radius: 25px;
     padding: 20px 0px;
   }
-  /* 3###>tela ------------------------------------------------------------------------------------------*/
-  #game-boy #tela {
+  main #projetos #game-boy .fundo #tela {
     height: 50vh;
     width: 70vw;
     background-color: var(--preto);
     margin: auto;
     overflow-x: hidden;
   }
-  #game-boy #desligado {
+  main #projetos #game-boy .fundo #tela #desligado {
     width: 70vw;
     height: 50vh;
     background-color: var(--preto);
     position: absolute;
     display: none;
   }
-  #projetos .projetos {
+  main #projetos #game-boy .fundo #tela .projetos {
     /* position: absolute; */
     display: flex;
   }
-  #projetos .projetos .projeto {
+  main #projetos #game-boy .fundo #tela .projetos .projeto {
     height: 50vh;
     width: 70vw;
     border-radius: 30px;
     display: none;
   }
-  /* 3###>botões ---------------------------------------------------------------------------------------*/
-  #game-boy #botoes {
+  main #projetos #game-boy .fundo #botoes {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
-  #game-boy span {
+  main #projetos #game-boy .fundo #botoes span {
     font-weight: 800;
     font-size: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
   }
-  #game-boy [class$=direita] span {
+  main #projetos #game-boy .fundo #botoes [class$=direita] span {
     transform: rotate(90deg);
   }
-  #game-boy [class$=esquerda] span {
+  main #projetos #game-boy .fundo #botoes [class$=esquerda] span {
     transform: rotate(-90deg);
   }
-  #game-boy [class^=botao] {
+  main #projetos #game-boy .fundo #botoes [class^=botao] {
     width: 60px;
     border-radius: 30px;
     background-color: var(--amarelo);
@@ -865,15 +822,14 @@
     position: relative;
     transition-duration: 0.1s;
   }
-  #game-boy [class*=seta] {
+  main #projetos #game-boy .fundo #botoes [class*=seta] {
     height: 60px;
   }
-  #game-boy .botao-start {
+  main #projetos #game-boy .fundo #botoes .botao-start {
     height: 30px;
     padding-top: 3px;
     text-align: center;
   }
-  /* 1#>roda-pé ----------------------------------------------------------------------------------------*/
   footer {
     width: 100%;
     height: 300px;
@@ -883,13 +839,9 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  /* 2##>textos -----------------------------------------------------------------------------------------*/
-  /* 3##>texto-um ---------------------------------------------------------------------------------------*/
   footer .texto-um {
     margin-bottom: 20px;
   }
-  /* 3##>texto-dois -------------------------------------------------------------------------------------*/
-  /* 2##>contatos --------------------------------------------------------------------------------------*/
   footer #divisor {
     font-weight: 700;
     width: -moz-fit-content;
@@ -910,10 +862,10 @@
   }
 }
 @media screen and (min-width: 768px) {
-  #home > p {
+  main #home > p {
     margin: 25px auto;
   }
-  #home > #carrossel-itens {
+  main #home > #carrossel-itens {
     transition-duration: 4s;
   }
 }/*# sourceMappingURL=main.css.map */
