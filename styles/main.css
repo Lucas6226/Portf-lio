@@ -65,16 +65,6 @@
        -moz-user-select: none;
             user-select: none;
   }
-  html, body {
-    overflow-x: hidden;
-    width: 100vw;
-    scroll-behavior: smooth;
-  }
-  section {
-    padding-top: 40px;
-    height: 100vh;
-    width: 100vw;
-  }
   a {
     border-radius: 5px;
     padding: 0px 10px 0px 10px;
@@ -95,7 +85,6 @@
     height: 2px;
     background-color: var(--branco-20);
   }
-  /* 2##>Tags-para-testes -------------------------------------------------------------------------------*/
   .azul {
     background-color: var(--azul) !important;
   }
@@ -117,7 +106,7 @@
     --orbita-tempo: .14s;
     --Rod-Gig-size: .30px;
     --Rod-Gig-time: .35s;
-    --tamanho-bloco: .4px;
+    --tamanho-bloco: .13vw;
     --blocos-time: .1s;
     /* 2##>Cores -------------------------------------------------------------------------------------- */
     --sombra: 0px 2px 5px rgba(54, 54, 54, 0.345);
@@ -174,8 +163,12 @@
     font-size: 16px;
     font-weight: 500;
   }
-  /* 1#>Nav-bar -------------------------------------------------------------------------------------- */
-  header {
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+    scroll-behavior: smooth;
+  }
+  html header, body header {
     width: 100vw;
     height: 40px;
     background-color: var(--branco-10);
@@ -187,14 +180,14 @@
     align-items: center;
     z-index: 100;
   }
-  header h2 {
+  html header h2, body header h2 {
     z-index: 101;
   }
-  header span {
+  html header span, body header span {
     transform: scale(1.2);
     z-index: 101;
   }
-  header li {
+  html header li, body header li {
     height: 100%;
     width: 100%;
     background-color: var(--branco);
@@ -210,31 +203,37 @@
     align-items: center;
     transition-duration: 0.45s;
   }
-  header li ul {
+  html header li ul, body header li ul {
     margin: 30px 0px 30px 0px;
+    font-size: 6vw;
     width: -moz-fit-content;
     width: fit-content;
   }
-  main #home h1 {
+  html main section, body main section {
+    padding-top: 40px;
+    height: 100vh;
+    width: 100vw;
+  }
+  html main #home h1, body main #home h1 {
     margin: 50px 0px 20px 0px;
     text-align: center;
   }
-  main #home #carrossel {
+  html main #home #carrossel, body main #home #carrossel {
     position: relative;
   }
-  main #home #carrossel [class^=home-seta] {
+  html main #home #carrossel [class^=home-seta], body main #home #carrossel [class^=home-seta] {
     position: absolute;
     top: 50%;
     transform: scale(2) translateY(-20%);
     z-index: 1;
   }
-  main #home #carrossel .home-seta-direita {
+  html main #home #carrossel .home-seta-direita, body main #home #carrossel .home-seta-direita {
     left: 87%;
   }
-  main #home #carrossel .home-seta-esquerda {
+  html main #home #carrossel .home-seta-esquerda, body main #home #carrossel .home-seta-esquerda {
     left: 8%;
   }
-  main #home #carrossel-itens {
+  html main #home #carrossel-itens, body main #home #carrossel-itens {
     height: 50vh;
     width: 300vw;
     display: flex;
@@ -244,11 +243,11 @@
     transition-duration: 0.5s;
     overflow-x: auto;
   }
-  main #home [class^=conteiner-carrossel] {
+  html main #home #carrossel-itens [class^=conteiner-carrossel], body main #home #carrossel-itens [class^=conteiner-carrossel] {
     width: 100vw;
     height: 50vh;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita, body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita {
     height: calc(600 * var(--orbita-tamanho));
     width: calc(600 * var(--orbita-tamanho));
     position: relative;
@@ -258,7 +257,7 @@
     transform: translate(-50%, -50%);
     /* transform: ; */
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=marcacao] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=marcacao], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=marcacao] {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -267,69 +266,69 @@
     border-radius: 50%;
     z-index: 2;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=cinco] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=cinco], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=cinco] {
     width: calc(645 * var(--orbita-tamanho));
     height: calc(645 * var(--orbita-tamanho));
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=quatro] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=quatro], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=quatro] {
     width: calc(500 * var(--orbita-tamanho));
     height: calc(500 * var(--orbita-tamanho));
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=tres] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=tres], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=tres] {
     width: calc(365 * var(--orbita-tamanho));
     height: calc(365 * var(--orbita-tamanho));
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=dois] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=dois], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=dois] {
     width: calc(225 * var(--orbita-tamanho));
     height: calc(225 * var(--orbita-tamanho));
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=um] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=um], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=um] {
     width: calc(90 * var(--orbita-tamanho));
     height: calc(90 * var(--orbita-tamanho));
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=orbita] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=orbita], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=orbita] {
     position: absolute;
     left: calc(4.17% * var(--especial));
     top: calc(4.17% * var(--especial));
     /* background-color: rgba(0, 0, 255, 0.2); */
     z-index: 3;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=cinco] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=cinco], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=cinco] {
     width: calc(500 * var(--orbita-tamanho));
     height: calc(500 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=quatro] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=quatro], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=quatro] {
     width: calc(400 * var(--orbita-tamanho));
     height: calc(400 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=tres] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=tres], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=tres] {
     width: calc(300 * var(--orbita-tamanho));
     height: calc(300 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=dois] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=dois], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=dois] {
     width: calc(200 * var(--orbita-tamanho));
     height: calc(200 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=um] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=um], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=um] {
     width: calc(100 * var(--orbita-tamanho));
     height: calc(100 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class^=item] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=item], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class^=item] {
     position: absolute;
     border-radius: 10%;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=js] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=js], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=js] {
     /* background-color: yellow; */
     height: calc(60 * var(--orbita-tamanho));
     width: calc(60 * var(--orbita-tamanho));
     animation: calc(20 * var(--orbita-tempo)) rotacao-direita infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=css] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=css], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=css] {
     /* background-color: blue; */
     height: calc(75 * var(--orbita-tamanho));
     width: calc(75 * var(--orbita-tamanho));
@@ -337,7 +336,7 @@
     top: 40%;
     animation: calc(20 * var(--orbita-tempo)) rotacao-esquerda infinite linear;
   }
-  main #home .conteiner-carrossel-um .animacao-orbita [class$=html] {
+  html main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=html], body main #home #carrossel-itens .conteiner-carrossel-um .animacao-orbita [class$=html] {
     /* background-color: orange; */
     height: calc(50 * var(--orbita-tamanho));
     width: calc(50 * var(--orbita-tamanho));
@@ -355,9 +354,9 @@
       transform: rotate(-360deg);
     }
   }
-  main #home .conteiner-carrossel-dois div {
-    height: 200px;
-    width: 200px;
+  html main #home #carrossel-itens .conteiner-carrossel-dois div, body main #home #carrossel-itens .conteiner-carrossel-dois div {
+    height: 50vw;
+    width: 50vw;
     background-image: linear-gradient(150deg, blue, orange);
     border-radius: 50%;
     position: relative;
@@ -365,17 +364,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  main #home .conteiner-carrossel-tres {
+  html main #home #carrossel-itens .conteiner-carrossel-tres, body main #home #carrossel-itens .conteiner-carrossel-tres {
     overflow: hidden;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig {
-    /* background-color: red; */
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig {
     height: calc(600 * var(--Rod-Gig-size));
     width: calc(600 * var(--Rod-Gig-size));
-    margin: 20px auto 0px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     position: relative;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda { /*roda pequena do meio*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda { /*roda pequena do meio*/
     position: absolute;
     height: calc(200 * var(--Rod-Gig-size));
     width: calc(200 * var(--Rod-Gig-size));
@@ -386,33 +386,33 @@
     z-index: 8;
     animation: calc(20 * var(--Rod-Gig-time)) rotacao linear reverse infinite;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class^=raio] { /*todos os raios*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda [class^=raio], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda [class^=raio] { /*todos os raios*/
     position: absolute;
     width: calc(40 * var(--Rod-Gig-size));
     height: calc(598 * var(--Rod-Gig-size));
     background-color: var(--marrom);
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=um] { /*raio um*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=um], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=um] { /*raio um*/
     transform: rotate(90deg);
     top: -100%;
     left: 40%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=dois] { /*raio dois*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=dois], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=dois] { /*raio dois*/
     transform: rotate(180deg);
     top: -100%;
     left: 41%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=tres] { /*raio tres*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=tres], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=tres] { /*raio tres*/
     transform: rotate(45deg);
     top: -100%;
     left: 40%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda [class$=quatro] { /*raio quatro*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=quatro], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda > [class$=quatro] { /*raio quatro*/
     transform: rotate(-45deg);
     top: -100%;
     left: 40%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro { /*roda grande*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro { /*roda grande*/
     position: absolute;
     left: -100%;
     top: -100%;
@@ -422,7 +422,7 @@
     border-radius: 50%;
     z-index: 9;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] { /*todos os carrinhos*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] { /*todos os carrinhos*/
     position: absolute;
     height: calc(100 * var(--Rod-Gig-size));
     width: calc(100 * var(--Rod-Gig-size));
@@ -430,7 +430,7 @@
     background-color: var(--azul);
     animation: rotacao calc(20 * var(--Rod-Gig-time)) infinite linear;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .triangulo { /*triangulo do carrinho*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .triangulo, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .triangulo { /*triangulo do carrinho*/
     position: absolute;
     height: calc(60 * var(--Rod-Gig-size));
     width: calc(160 * var(--Rod-Gig-size));
@@ -440,7 +440,7 @@
     top: 16%;
     left: -29%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .teto { /*barra horizontal do carrinho*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .teto, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .teto { /*barra horizontal do carrinho*/
     position: absolute;
     width: calc(180 * var(--Rod-Gig-size));
     height: calc(20 * var(--Rod-Gig-size));
@@ -450,7 +450,7 @@
     left: -37%;
     z-index: 3;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .frente {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .frente, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .frente {
     position: absolute;
     width: calc(100 * var(--Rod-Gig-size));
     height: calc(50 * var(--Rod-Gig-size));
@@ -458,7 +458,7 @@
     top: 131%;
     left: -9.5%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .lado {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .lado, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] .lado {
     position: absolute;
     height: calc(50 * var(--Rod-Gig-size));
     width: calc(25 * var(--Rod-Gig-size));
@@ -467,48 +467,48 @@
     top: 127%;
     left: 90.5%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] [class^=barra] { /*todas as barras verticais dos caarrinhos*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] [class^=barra], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] [class^=barra] { /*todas as barras verticais dos caarrinhos*/
     position: absolute;
     height: calc(50 * var(--Rod-Gig-size));
     width: calc(10 * var(--Rod-Gig-size));
     background-color: var(--marrom);
     z-index: 2;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=um] { /* barra vertical um*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=um], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=um] { /* barra vertical um*/
     top: 82%;
     left: -10%;
     z-index: 300;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=dois] { /* barra vertical dois*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=dois], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=dois] { /* barra vertical dois*/
     top: 73%;
     left: 105%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=tres] { /* barra vertical tres*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=tres], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=tres] { /* barra vertical tres*/
     top: 82%;
     left: 81%;
     z-index: 6;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=quatro] { /* barra vertical quatro*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=quatro], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class^=carrinho] > [class$=quatro] { /* barra vertical quatro*/
     top: 80%;
     left: 18%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=um] { /*carrinho um*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=um], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=um] { /*carrinho um*/
     left: 40%;
     top: -12%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=dois] { /*carrinho dois*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=dois], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=dois] { /*carrinho dois*/
     top: 41%;
     left: 93%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=tres] { /*carrinho tres*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=tres], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=tres] { /*carrinho tres*/
     top: 95%;
     left: 40%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=quatro] { /*carrinho quatro*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=quatro], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class$=quatro] { /*carrinho quatro*/
     top: 40%;
     left: -13%;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class$=estrela] { /*todas as estrelas*/
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class$=estrela], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro [class$=estrela] { /*todas as estrelas*/
     position: absolute;
     background-color: var(--amarelo);
     height: calc(150 * var(--Rod-Gig-size));
@@ -517,27 +517,27 @@
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     z-index: -1;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=um] {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=um], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=um] {
     top: -4%;
     left: -4%;
     transform: rotate(-45deg);
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=dois] {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=dois], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=dois] {
     top: 74%;
     left: 75%;
     transform: rotate(60deg);
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=tres] {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=tres], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=tres] {
     top: -4%;
     left: 74%;
     transform: rotate(40deg);
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=quatro] {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=quatro], body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .roda .aro > [class^=quatro] {
     top: 75%;
     left: -3%;
     transform: rotate(80deg);
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .pe {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .pe, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .pe {
     position: absolute;
     height: calc(350 * var(--Rod-Gig-size));
     width: calc(80 * var(--Rod-Gig-size));
@@ -547,7 +547,7 @@
     background-color: #2959a6;
     z-index: 3;
   }
-  main #home .conteiner-carrossel-tres .animacao-rod-gig .base {
+  html main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .base, body main #home #carrossel-itens .conteiner-carrossel-tres .animacao-rod-gig .base {
     position: absolute;
     height: calc(100 * var(--Rod-Gig-size));
     width: calc(400 * var(--Rod-Gig-size));
@@ -566,43 +566,41 @@
       transform: rotate(360deg);
     }
   }
-  main #home > p {
+  html main #home > p, body main #home > p {
     text-align: center;
     padding: 0px 10px;
     margin: auto;
-    width: clamp(300px, 55vw, 450px);
+    font-size: clamp(12px, 5vw, 30px);
+    max-width: 70vw;
   }
-  main #home > p::after {
-    content: " computador.";
-  }
-  main #sobre-min h2 {
+  html main #sobre-min h2, body main #sobre-min h2 {
     margin: 0px 0px 10px 16px;
   }
-  main #sobre-min .blocos {
+  html main #sobre-min .blocos, body main #sobre-min .blocos {
     height: 93%;
     width: 100%;
     display: grid;
     place-items: center;
   }
-  main #sobre-min .blocos h2 {
-    margin-top: calc(var(--tamanho-bloco) * 20);
+  html main #sobre-min .blocos h2, body main #sobre-min .blocos h2 {
+    font-size: calc(var(--tamanho-bloco) * 60);
   }
-  main #sobre-min .blocos p {
+  html main #sobre-min .blocos p, body main #sobre-min .blocos p {
     font-size: calc(var(--tamanho-bloco) * 40);
   }
-  main #sobre-min .blocos span {
-    transform: scale(2.5);
+  html main #sobre-min .blocos span, body main #sobre-min .blocos span {
+    transform: scale(3) translateY(-30%);
     cursor: default;
   }
-  main #sobre-min .blocos .bloco {
+  html main #sobre-min .blocos .bloco, body main #sobre-min .blocos .bloco {
     width: calc(var(--tamanho-bloco) * 700);
     height: calc(var(--tamanho-bloco) * 200);
     display: flex;
   }
-  main #sobre-min .blocos .row-reverse {
+  html main #sobre-min .blocos .row-reverse, body main #sobre-min .blocos .row-reverse {
     flex-direction: row-reverse !important;
   }
-  main #sobre-min .blocos .setas {
+  html main #sobre-min .blocos .setas, body main #sobre-min .blocos .setas {
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     top: -4.5%;
@@ -611,7 +609,10 @@
     /* background-color: yellow; */
     transform-style: preserve-3d;
   }
-  main #sobre-min .blocos .para-cima {
+  html main #sobre-min .blocos .para-cima, body main #sobre-min .blocos .para-cima {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     position: absolute;
@@ -619,7 +620,10 @@
     padding-top: calc(70 * var(--tamanho-bloco));
     transform-origin: bottom;
   }
-  main #sobre-min .blocos .para-baixo {
+  html main #sobre-min .blocos .para-baixo, body main #sobre-min .blocos .para-baixo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(var(--tamanho-bloco) * 200);
     height: calc(var(--tamanho-bloco) * 200);
     position: relative;
@@ -629,7 +633,7 @@
     transform-origin: bottom;
     transform: rotateX(90deg);
   }
-  main #sobre-min .blocos .texto {
+  html main #sobre-min .blocos .texto, body main #sobre-min .blocos .texto {
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
     top: -4.5%;
@@ -638,132 +642,126 @@
     /* background-color: lightgray; */
     transform-style: preserve-3d;
   }
-  main #sobre-min .blocos .frente {
+  html main #sobre-min .blocos .frente, body main #sobre-min .blocos .frente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
-    padding-top: calc(var(--tamanho-bloco) * 40);
     position: absolute;
     /* background-color: red; */
     background-color: var(--branco-20);
     text-align: center;
     transform-origin: top;
   }
-  main #sobre-min .blocos .emcima {
+  html main #sobre-min .blocos .emcima, body main #sobre-min .blocos .emcima {
     width: calc(var(--tamanho-bloco) * 500);
     height: calc(var(--tamanho-bloco) * 200);
-    padding-bottom: calc(var(--tamanho-bloco) * 120);
     position: absolute;
     /* background-color: blue; */
     transform: rotateX(90deg);
     transform-origin: top;
   }
-  main #sobre-min .blocos .invertido {
+  html main #sobre-min .blocos .invertido, body main #sobre-min .blocos .invertido {
     top: 15%;
     position: relative;
     text-align: center;
     transform: rotateX(180deg);
   }
-  main #conhecimentos > h2 {
+  html main #conhecimentos > h2, body main #conhecimentos > h2 {
     text-align: right;
     margin: 0px 16px 16px 0px;
   }
-  main #conhecimentos [class^=barra-seletora] {
+  html main #conhecimentos [class^=barra-seletora], body main #conhecimentos [class^=barra-seletora] {
     height: 40px;
     padding: 0px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  main #conhecimentos .barra-seletora-um {
+  html main #conhecimentos .barra-seletora-um, body main #conhecimentos .barra-seletora-um {
     background-color: var(--rosa);
   }
-  main #conhecimentos .barra-seletora-dois {
+  html main #conhecimentos .barra-seletora-dois, body main #conhecimentos .barra-seletora-dois {
     background-color: var(--azul);
   }
-  main #conhecimentos .seletor {
+  html main #conhecimentos .seletor, body main #conhecimentos .seletor {
     height: 30px;
     border-radius: 15px;
     text-align: center;
     font-weight: 600;
   }
-  main #conhecimentos .conhecimentos-texto {
+  html main #conhecimentos option, body main #conhecimentos option {
+    font-size: 3vw;
+  }
+  html main #conhecimentos .conhecimentos-texto, body main #conhecimentos .conhecimentos-texto {
     margin-top: 20px;
-    padding: 0px 16px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    justify-content: center;
   }
-  main #conhecimentos .conhecimentos-texto #paragrafo {
-    font-size: 14px;
-    width: clamp(200px, 45vw, 620px);
-    margin: auto;
-  }
-  main #conhecimentos .conhecimentos-texto #grafico {
-    height: 350px;
-    width: 30%;
-  }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem {
-    height: 350px;
-    width: clamp(50px, 15vw, 100px);
-    background-color: var(--branco-40);
-    position: relative;
-    margin: auto;
-    display: flex;
-    border-radius: 15px;
-  }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem .quantidade {
-    height: 234px;
-    width: clamp(50px, 15vw, 100px);
-    background-color: var(--amarelo);
-    bottom: 0;
-    position: absolute;
-    margin: auto;
-    border-radius: 15px;
-    transition-duration: 1.4s;
-    animation-timing-function: ease-in-out;
-  }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #barras {
-    height: 100%;
-    width: 50%;
+  html main #conhecimentos .conhecimentos-texto #paragrafo, body main #conhecimentos .conhecimentos-texto #paragrafo {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 5vh;
   }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #barras [class^=barra] {
-    width: 30px;
-    height: 2px;
-    background-color: #212121;
-    position: relative;
-    left: -25%;
+  html main #conhecimentos .conhecimentos-texto #paragrafo p, body main #conhecimentos .conhecimentos-texto #paragrafo p {
+    font-size: clamp(15px, 5vw, 25px);
+    width: 80vw;
+    text-align: center;
   }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #numeros {
-    height: 100%;
-    width: 50%;
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box {
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgb(16, 16, 16);
+    border-radius: 10px;
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    margin: 0.5em;
+    gap: 4%;
   }
-  main #conhecimentos .conhecimentos-texto #grafico .porcentagem #numeros [class^=numero] {
-    width: 10px;
-    height: 10px;
-    font-weight: bolder;
-    position: relative;
-    left: 10%;
-    top: -2%;
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes .botao, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes .botao {
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
   }
-  main #projetos h2 {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=vermelho], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=vermelho] {
+    background-color: #FF605C;
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=amarelo], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=amarelo] {
+    background-color: #FFBD44;
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=verde], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=verde] {
+    background-color: #00CA4E;
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea {
+    background-color: rgb(40, 40, 40);
+    color: rgb(150, 150, 150);
+    border: 1px solid rgb(40, 40, 40);
+    text-align: left;
+    font-weight: 600;
+    padding-left: 1em;
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea:focus, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea:focus {
+    outline: none;
+  }
+  html main #projetos h2, body main #projetos h2 {
     margin: 0px 0px 30px 8px;
   }
-  main #projetos #game-boy {
+  html main #projetos #game-boy, body main #projetos #game-boy {
     margin: auto;
     height: -moz-fit-content;
     height: fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
-  main #projetos #game-boy .fundo {
+  html main #projetos #game-boy .fundo, body main #projetos #game-boy .fundo {
     height: 80vh;
     width: 80vw;
     background-color: var(--verde);
@@ -771,50 +769,50 @@
     border-radius: 25px;
     padding: 20px 0px;
   }
-  main #projetos #game-boy .fundo #tela {
+  html main #projetos #game-boy .fundo #tela, body main #projetos #game-boy .fundo #tela {
     height: 50vh;
     width: 70vw;
     background-color: var(--preto);
     margin: auto;
     overflow-x: hidden;
   }
-  main #projetos #game-boy .fundo #tela #desligado {
+  html main #projetos #game-boy .fundo #tela #desligado, body main #projetos #game-boy .fundo #tela #desligado {
     width: 70vw;
     height: 50vh;
     background-color: var(--preto);
     position: absolute;
     display: none;
   }
-  main #projetos #game-boy .fundo #tela .projetos {
+  html main #projetos #game-boy .fundo #tela .projetos, body main #projetos #game-boy .fundo #tela .projetos {
     /* position: absolute; */
     display: flex;
   }
-  main #projetos #game-boy .fundo #tela .projetos .projeto {
+  html main #projetos #game-boy .fundo #tela .projetos .projeto, body main #projetos #game-boy .fundo #tela .projetos .projeto {
     height: 50vh;
     width: 70vw;
     border-radius: 30px;
     display: none;
   }
-  main #projetos #game-boy .fundo #botoes {
+  html main #projetos #game-boy .fundo #botoes, body main #projetos #game-boy .fundo #botoes {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
-  main #projetos #game-boy .fundo #botoes span {
+  html main #projetos #game-boy .fundo #botoes span, body main #projetos #game-boy .fundo #botoes span {
     font-weight: 800;
     font-size: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
   }
-  main #projetos #game-boy .fundo #botoes [class$=direita] span {
+  html main #projetos #game-boy .fundo #botoes [class$=direita] span, body main #projetos #game-boy .fundo #botoes [class$=direita] span {
     transform: rotate(90deg);
   }
-  main #projetos #game-boy .fundo #botoes [class$=esquerda] span {
+  html main #projetos #game-boy .fundo #botoes [class$=esquerda] span, body main #projetos #game-boy .fundo #botoes [class$=esquerda] span {
     transform: rotate(-90deg);
   }
-  main #projetos #game-boy .fundo #botoes [class^=botao] {
+  html main #projetos #game-boy .fundo #botoes [class^=botao], body main #projetos #game-boy .fundo #botoes [class^=botao] {
     width: 60px;
     border-radius: 30px;
     background-color: var(--amarelo);
@@ -822,15 +820,15 @@
     position: relative;
     transition-duration: 0.1s;
   }
-  main #projetos #game-boy .fundo #botoes [class*=seta] {
+  html main #projetos #game-boy .fundo #botoes [class*=seta], body main #projetos #game-boy .fundo #botoes [class*=seta] {
     height: 60px;
   }
-  main #projetos #game-boy .fundo #botoes .botao-start {
+  html main #projetos #game-boy .fundo #botoes .botao-start, body main #projetos #game-boy .fundo #botoes .botao-start {
     height: 30px;
     padding-top: 3px;
     text-align: center;
   }
-  footer {
+  html footer, body footer {
     width: 100%;
     height: 300px;
     background-color: var(--branco-20);
@@ -839,15 +837,15 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  footer .texto-um {
+  html footer .texto-um, body footer .texto-um {
     margin-bottom: 20px;
   }
-  footer #divisor {
+  html footer #divisor, body footer #divisor {
     font-weight: 700;
     width: -moz-fit-content;
     width: fit-content;
   }
-  footer #divisor::after {
+  html footer #divisor::after, body footer #divisor::after {
     content: "";
     display: block;
     height: 2px;
@@ -857,15 +855,18 @@
     top: -12px;
     left: 110%;
   }
-  footer [class^=contato] {
+  html footer [class^=contato], body footer [class^=contato] {
     margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 768px) {
-  main #home > p {
+  :root {
+    --Rod-Gig-size: .5px;
+  }
+  html main #home > p, body main #home > p {
     margin: 25px auto;
   }
-  main #home > #carrossel-itens {
+  html main #home > #carrossel-itens, body main #home > #carrossel-itens {
     transition-duration: 4s;
   }
 }/*# sourceMappingURL=main.css.map */
