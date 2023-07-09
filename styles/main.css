@@ -85,20 +85,29 @@
     height: 2px;
     background-color: var(--branco-20);
   }
-  .azul {
+  .fundo-azul {
     background-color: var(--azul) !important;
   }
-  .rosa {
+  .fundo-rosa {
     background-color: var(--rosa) !important;
   }
-  .verde {
+  .fundo-verde {
     background-color: var(--verde) !important;
   }
-  .vermelho {
+  .fundo-vermelho {
     background-color: var(--vermelho) !important;
   }
-  .amarelo {
+  .fundo-amarelo {
     background-color: var(--amarelo) !important;
+  }
+  .fonte-azul {
+    color: blue !important;
+  }
+  .fonte-vermelho {
+    color: red !important;
+  }
+  .fonte-verde {
+    color: green !important;
   }
   :root {
     /* 2##>Variaveis-de-animações ----------------------------------------------------------------------*/
@@ -720,33 +729,41 @@
     background-color: rgb(16, 16, 16);
     border-radius: 10px;
   }
-  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] {
     display: flex;
     align-items: center;
     margin: 0.5em;
     gap: 4%;
   }
-  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes .botao, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes .botao {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class^=botao], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class^=botao] {
     height: 1em;
     width: 1em;
     border-radius: 50%;
   }
-  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=vermelho], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=vermelho] {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class^=botao]:hover, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class^=botao]:hover {
+    height: 0.85em;
+    width: 0.85em;
+    margin: 0.075em;
+    filter: brightness(50%);
+  }
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=vermelho], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=vermelho] {
     background-color: #FF605C;
   }
-  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=amarelo], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=amarelo] {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=amarelo], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=amarelo] {
     background-color: #FFBD44;
   }
-  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=verde], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box #botoes [class^=verde] {
+  html main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=verde], body main #conhecimentos .conhecimentos-texto #paragrafo #code-box [class^=botoes-code-area] [class$=verde] {
     background-color: #00CA4E;
   }
   html main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea {
     background-color: rgb(40, 40, 40);
     color: rgb(150, 150, 150);
     border: 1px solid rgb(40, 40, 40);
+    border-radius: 0px 0px 10px 10px;
+    font-size: 1.2em;
     text-align: left;
     font-weight: 600;
-    padding-left: 1em;
+    padding: 1em 0px 0px 1em;
   }
   html main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea:focus, body main #conhecimentos .conhecimentos-texto #paragrafo #code-box textarea:focus {
     outline: none;
@@ -793,26 +810,26 @@
     border-radius: 30px;
     display: none;
   }
-  html main #projetos #game-boy .fundo #botoes, body main #projetos #game-boy .fundo #botoes {
+  html main #projetos #game-boy .fundo #botoes-game-boy, body main #projetos #game-boy .fundo #botoes-game-boy {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
-  html main #projetos #game-boy .fundo #botoes span, body main #projetos #game-boy .fundo #botoes span {
+  html main #projetos #game-boy .fundo #botoes-game-boy span, body main #projetos #game-boy .fundo #botoes-game-boy span {
     font-weight: 800;
     font-size: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
   }
-  html main #projetos #game-boy .fundo #botoes [class$=direita] span, body main #projetos #game-boy .fundo #botoes [class$=direita] span {
+  html main #projetos #game-boy .fundo #botoes-game-boy [class$=direita] span, body main #projetos #game-boy .fundo #botoes-game-boy [class$=direita] span {
     transform: rotate(90deg);
   }
-  html main #projetos #game-boy .fundo #botoes [class$=esquerda] span, body main #projetos #game-boy .fundo #botoes [class$=esquerda] span {
+  html main #projetos #game-boy .fundo #botoes-game-boy [class$=esquerda] span, body main #projetos #game-boy .fundo #botoes-game-boy [class$=esquerda] span {
     transform: rotate(-90deg);
   }
-  html main #projetos #game-boy .fundo #botoes [class^=botao], body main #projetos #game-boy .fundo #botoes [class^=botao] {
+  html main #projetos #game-boy .fundo #botoes-game-boy [class^=botao], body main #projetos #game-boy .fundo #botoes-game-boy [class^=botao] {
     width: 60px;
     border-radius: 30px;
     background-color: var(--amarelo);
@@ -820,10 +837,10 @@
     position: relative;
     transition-duration: 0.1s;
   }
-  html main #projetos #game-boy .fundo #botoes [class*=seta], body main #projetos #game-boy .fundo #botoes [class*=seta] {
+  html main #projetos #game-boy .fundo #botoes-game-boy [class*=seta], body main #projetos #game-boy .fundo #botoes-game-boy [class*=seta] {
     height: 60px;
   }
-  html main #projetos #game-boy .fundo #botoes .botao-start, body main #projetos #game-boy .fundo #botoes .botao-start {
+  html main #projetos #game-boy .fundo #botoes-game-boy .botao-start, body main #projetos #game-boy .fundo #botoes-game-boy .botao-start {
     height: 30px;
     padding-top: 3px;
     text-align: center;

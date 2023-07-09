@@ -91,11 +91,15 @@
         background-color: var(--branco-20);
     }
 
-    .azul {background-color: var(--azul) !important;}
-    .rosa {background-color: var(--rosa) !important;}
-    .verde {background-color: var(--verde) !important;}
-    .vermelho {background-color: var(--vermelho) !important;}
-    .amarelo {background-color: var(--amarelo) !important;}
+    .fundo-azul {background-color: var(--azul) !important;}
+    .fundo-rosa {background-color: var(--rosa) !important;}
+    .fundo-verde {background-color: var(--verde) !important;}
+    .fundo-vermelho {background-color: var(--vermelho) !important;}
+    .fundo-amarelo {background-color: var(--amarelo) !important;}
+
+    .fonte-azul {color: blue !important;}
+    .fonte-vermelho {color: red !important;}
+    .fonte-verde {color: green !important;}
 
     :root {
     /* 2##>Variaveis-de-animações ----------------------------------------------------------------------*/
@@ -818,25 +822,31 @@
                             background-color: rgb(16, 16, 16);
                             border-radius: 10px;
 
-                            #botoes {
+                            [class^="botoes-code-area"] {
                                 display: flex;
                                 align-items: center;
                                 margin: .5em;
                                 gap: 4%;
 
-                                .botao {
+                                [class^="botao"] {
                                     height: 1em;
                                     width: 1em;
                                     border-radius: 50%;
+                                    &:hover {
+                                        height: .85em;
+                                        width: .85em;
+                                        margin: .075em;
+                                        filter: brightness(50%);
+                                    }
                                 }
 
-                                [class^="vermelho"] {
+                                [class$="vermelho"] {
                                     background-color: #FF605C;
                                 }
-                                [class^="amarelo"] {
+                                [class$="amarelo"] {
                                     background-color: #FFBD44;
                                 }
-                                [class^="verde"] {
+                                [class$="verde"] {
                                     background-color: #00CA4E;
                                 }
                                 
@@ -846,9 +856,11 @@
                                 background-color: rgb(40, 40, 40);
                                 color: rgb(150, 150, 150);
                                 border: 1px solid rgb(40, 40, 40);
+                                border-radius: 0px 0px 10px 10px;
+                                font-size: 1.2em;
                                 text-align: left;
                                 font-weight: 600;
-                                padding-left: 1em;
+                                padding: 1em 0px 0px 1em;
 
                                 &:focus {
                                     outline: none;
@@ -907,7 +919,7 @@
                             }
                         }
     
-                        #botoes {
+                        #botoes-game-boy {
                             margin-top: 50px;
                             
                             display: flex;

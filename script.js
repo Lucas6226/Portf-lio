@@ -1,4 +1,3 @@
-
 var cores = ['var(--azul)', 'var(--rosa)', 'var(--vermelho)', 'var(--verde)', 'var(--amarelo)']
 
 ;(function(){ // 1#>efeito-visual-links
@@ -157,50 +156,77 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
         }
 
-        
-        let resposta  = ''        
+        let suporte = () => {2+2}
+        let resposta  = {html: '', função: suporte}     
+
         if (seletor_um.value == 'HTML&CSS') { 
             if (barra == 1) {
                 selecionarOpções(["Sintaxe HTML e CSS",  "Tags HTML", "Meta tags", "Listas tabelas e formularios", "Box model", "Responsividade", "SEO", "Animações e efeitos CSS", "Flex e grid display", "Position", "Pseudo classes e elements", "Boas praticas"])
             }   
             
             if (seletor_dois.value == 'sintaxe-html-e-css') {
-                resposta = `
+                resposta.html = `
                 <p>Meus conhecimentos de <strong>HTML&CSS</strong> abrangem des de as propriedades basicas de <strong>CSS</strong> como margin, paddin,</p>
                 <div id="code-box">
-                    <div id="botoes">
-                        <abbr title="limpar"><div class="vermelho-html botao"></div></abbr>
-                        <abbr title="copiar"><div class="amarelo-html botao"></div></abbr>
-                        <abbr title="resetar"><div class="verde-html botao"></div></abbr>
+                    <div class="botoes-code-area-html">
+                        <abbr title="limpar"><div class="botao-vermelho"></div></abbr>
+                        <abbr title="copiar"><div class="botao-amarelo"></div></abbr>
+                        <abbr title="resetar"><div class="botao-verde"></div></abbr>
                     </div>
-                    <textarea name="code-area" id="code-area-html" cols="30" rows="5">
+                    <textarea class="code-area-html" cols="20" rows="4">
                         
 <h1>Titulo De Exemplo</h1>
-
                     </textarea>
-                </div>`
+                </div>
+                `
+
+                resposta.função = (seletor = 'html', code = `                                   <h1>Titulo De Exemplo</h1>`) => {
+
+                    const botoes = document.querySelector(`div.botoes-code-area-${seletor}`)
+                    const botoesPreLista = botoes.children
+                    let botoesLista = []
+                    for (let c=0 ;c<3 ;c++ ) {
+                        botoesLista[c] = botoesPreLista[c].children[0]
+                    }
+                    
+                    let codeArea = document.querySelector(`textarea.code-area-${seletor}`)
+                    botoesLista[0].addEventListener('click', () => {
+                        codeArea.value = ''
+                    })
+                    botoesLista[1].addEventListener('click', () => {
+                        navigator.clipboard.writeText(codeArea.value)
+                    })
+                    botoesLista[2].addEventListener('click', () => {
+                        codeArea.value = code
+                    })
+
+                    codeArea.addEventListener('change', () => {
+                        
+                    })
+                }
+
             } else if (seletor_dois.value == 'tags-html') {
-                resposta = 'tags html'
+                resposta.html = 'tags html'
             } else if (seletor_dois.value == 'meta-tags') {
-                resposta = `meta tags`
+                resposta.html = `meta tags`
             } else if (seletor_dois.value == 'listas-tabelas-e-formularios') {
-                resposta = `listas tabelas e formularios`
+                resposta.html = `listas tabelas e formularios`
             } else if (seletor_dois.value == 'box-model') {
-                resposta = `box model`
+                resposta.html = `box model`
             } else if (seletor_dois.value == 'responsividade') {
-                resposta = `responsividade`
+                resposta.html = `responsividade`
             } else if (seletor_dois.value == 'seo') {
-                resposta = `SEO`
+                resposta.html = `SEO`
             } else if (seletor_dois.value == 'animações-e-efeitos-css') {
-                resposta = `animações e e efeitos css`
+                resposta.html = `animações e e efeitos css`
             } else if (seletor_dois.value == 'flex-e-grid-display') {
-                resposta = `flex e grid display`
+                resposta.html = `flex e grid display`
             } else if (seletor_dois.value == 'position') {
-                resposta = `position`
+                resposta.html = `position`
             } else if (seletor_dois.value == 'pseudo-classes-e-elements') {
-                resposta = `pseudo classes e elements`
+                resposta.html = `pseudo classes e elements`
             } else if (seletor_dois.value == 'boas-praticas') {
-                resposta = `boas praticas`
+                resposta.html = `boas praticas`
             }
 
         } else if (seletor_um.value == 'JavaScript') {
@@ -209,24 +235,24 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'sintaxe') {
-                resposta = 
+                resposta.html = 
                 `sintaxe`
             } else if (seletor_dois.value == 'dom') {
-                resposta = 
+                resposta.html = 
                 `dom`
             } else if (seletor_dois.value == 'variaveis-e-tipos-de-dados') {
-                resposta = `variavies e tipos de dados`
+                resposta.html = `variavies e tipos de dados`
             } else if (seletor_dois.value == 'callbacks') {
-                resposta = `As CallBacks são funções que recebem como parametro outras funções`
+                resposta.html = `As CallBacks são funções que recebem como parametro outras funções`
             } else if (seletor_dois.value == 'funções-anonimas-e-iife') {
-                resposta = 
+                resposta.html = 
                 `As IIFE (<strong>I</strong>mediatli <strong>I</strong>nvoked <strong>F</strong>unction <strong>E</strong>xpression)`
             } else if (seletor_dois.value == 'arrays-e-objetos') {
-                resposta = `arrays e objetos`
+                resposta.html = `arrays e objetos`
             } else if (seletor_dois.value == 'entrada-e-formatação-de-dados') {
-                resposta = `entrada e formatação de dados`
+                resposta.html = `entrada e formatação de dados`
             } else if (seletor_dois.value == 'react') {
-                resposta = `react`
+                resposta.html = `react`
             }
         } else if (seletor_um.value == 'React') {
             if (barra == 1) {
@@ -234,12 +260,12 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'componentes') {
-                resposta = 
+                resposta.html = 
                 "componentes react"
             } else if (seletor_dois.value == 'jsx') {
-                resposta = `jsx`
+                resposta.html = `jsx`
             } else if (seletor_dois.value == 'state-e-props') {
-                resposta = `state e props`
+                resposta.html = `state e props`
             }
         } else if (seletor_um.value == 'Python') {
             if (barra == 1) {
@@ -247,21 +273,21 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'sintaxe') {
-                resposta = `sintaxe`
+                resposta.html = `sintaxe`
             } else if (seletor_dois.value == 'estruturas-de-controle-e-repetição') {
-                resposta = `estruturas de controle e repetição`
+                resposta.html = `estruturas de controle e repetição`
             } else if (seletor_dois.value == 'funções') {
-                resposta = `funções`
+                resposta.html = `funções`
             } else if (seletor_dois.value == 'bibliotecas-e-modularização') {
-                resposta = `biblioteca-e-modularização`
+                resposta.html = `biblioteca-e-modularização`
             } else if (seletor_dois.value == 'orientação-a-objeto') {
-                resposta = `orientação a objeto`
+                resposta.html = `orientação a objeto`
             } else if (seletor_dois.value == 'manipulação-de-arquivos') {
-                resposta = `manipulação de arquivos`
+                resposta.html = `manipulação de arquivos`
             } else if (seletor_dois.value == 'automação') {
-                resposta = `automação`
+                resposta.html = `automação`
             } else if (seletor_dois.value == 'manipulação-e-entrada-de-dados-e-strings') {
-                resposta = `manipulação e entrada de dados e strings`
+                resposta.html = `manipulação e entrada de dados e strings`
             }
         } else if (seletor_um.value == 'Logica-de-Programação') {
             if (barra == 1) {
@@ -269,20 +295,20 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'estrutura-basica') {
-                resposta = 
+                resposta.html = 
                 `estrutura basica`
             } else if (seletor_dois.value == 'estruturas-condicionais') {
-                resposta = 
+                resposta.html = 
                 `estruturas condicionais`
             } else if (seletor_dois.value == 'estruturas-de-repetição') {
-                resposta = 
+                resposta.html = 
                 `estruturas de repetição`
             } else if (seletor_dois.value == 'tipos-premitivos') {
-                resposta = `tipos premitivos`
+                resposta.html = `tipos premitivos`
             } else if (seletor_dois.value == 'funções') {
-                resposta = `funções`
+                resposta.html = `funções`
             } else if (seletor_dois.value == 'listas-e-dicionarios') {
-                resposta = `listas e dicionarios`
+                resposta.html = `listas e dicionarios`
             } 
         } else if (seletor_um.value == 'SASS') {
             if (barra == 1) {
@@ -290,25 +316,25 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'sintaxe') {
-                resposta = 
+                resposta.html = 
                 `sintaxe`
             } else if (seletor_dois.value == 'logica-e-beneficios') {
-                resposta = 
+                resposta.html = 
                 `logica e beneficios`
             } else if (seletor_dois.value == 'encadeamento-e-modularização') {
-                resposta = 
+                resposta.html = 
                 `encadeamento e modularização`
             } else if (seletor_dois.value == 'variaveis-e-@mixin') {
-                resposta =
+                resposta.html =
                 `variaveis e @mixin`
             } else if (seletor_dois.value == 'funções-e-@extend') {
-                resposta = 
+                resposta.html = 
                 `funções e @extend`
             } else if (seletor_dois.value == 'estruturas') {
-                resposta =
+                resposta.html =
                 `estruturas`
             } else if (seletor_dois.value == 'limitações') {
-                resposta =
+                resposta.html =
                 `limitações`
             }
 
@@ -318,13 +344,13 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
             
             if (seletor_dois.value == 'o-que-são?') {
-                resposta = 
+                resposta.html = 
                 `o que são`
             } else if (seletor_dois.value == 'para-que-servem?') {
-                resposta = 
+                resposta.html = 
                 `para que servem`
             } else if (seletor_dois.value == '') {
-                resposta = 
+                resposta.html = 
                 ``
             }
             altura_grafico = 4 
@@ -334,21 +360,20 @@ setInterval(function () { // 1#>efeito-visual-strong
             }
 
             if (seletor_dois.value == "clean-code") {
-                resposta = 
+                resposta.html = 
                 `clean code`
             } else if (seletor_dois.value == "mobile-first") {
-                resposta = 
+                resposta.html = 
                 `mobile first`
             } else if (seletor_dois.value == 'soft-skils') {
-                resposta = 
+                resposta.html = 
                 `soft skils`
             }
-        } 
-
+        }
         
-
         let paragrafo_resposta = document.querySelector('div#paragrafo')
-        paragrafo_resposta.innerHTML = resposta
+        paragrafo_resposta.innerHTML = resposta.html
+        setTimeout(resposta.função, 10)
     }
 
     organizar_opções(1)
