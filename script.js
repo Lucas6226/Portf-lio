@@ -166,7 +166,7 @@ setInterval(function () { // 1#>efeito-visual-strong
             
             if (seletor_dois.value == 'sintaxe-html-e-css') {
                 resposta.html = `
-                <p>Meus conhecimentos de <strong>HTML&CSS</strong> abrangem des de as propriedades basicas de <strong>CSS</strong> como margin, paddin,</p>
+                <p>A sintaxe do <strong>HTML</strong> é simples e não apresenta dificuldades, um dos motivos para isso é o fato de  que o <strong>HTML</strong> (Assim como o <strong>CSS</strong>), não é uma linguagem de programação, isso tras limitações mas tambem tras facilidades e maior simplicidade como vemos nos exemplos abaixo</p>
                 <div id="code-box">
                     <div class="botoes-code-area-html">
                         <abbr title="limpar"><div class="botao-vermelho"></div></abbr>
@@ -176,6 +176,7 @@ setInterval(function () { // 1#>efeito-visual-strong
                     <textarea class="code-area-html" cols="20" rows="4">
                         
 <h1>Titulo De Exemplo</h1>
+<p>Paragrafo de exemplo</p>
                     </textarea>
                 </div>
                 `
@@ -200,9 +201,6 @@ setInterval(function () { // 1#>efeito-visual-strong
                         codeArea.value = code
                     })
 
-                    codeArea.addEventListener('change', () => {
-                        
-                    })
                 }
 
             } else if (seletor_dois.value == 'tags-html') {

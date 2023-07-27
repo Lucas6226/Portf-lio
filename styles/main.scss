@@ -103,8 +103,10 @@
 
     :root {
     /* 2##>Variaveis-de-animações ----------------------------------------------------------------------*/
-        --orbita-tamanho: .35px;
-        --orbita-tempo: .14s;    
+        // --orbita-tamanho: .35px;
+        // --orbita-tempo: .14s; 
+        --OrbitaTime: .1s;
+
 
         --Rod-Gig-size: .30px;
         --Rod-Gig-time: .35s;
@@ -181,7 +183,7 @@
 
         header {
             width: 100vw;
-            height: 40px;
+            height: 3em;
             background-color: var(--branco-10);
     
             padding: 0px 1.5em 0px 1.5em;
@@ -218,11 +220,11 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
+                gap: 6em;
                 transition-duration: .45s;
     
                 ul {
-                    margin: 30px 0px 30px 0px;
-                    font-size: 6vw;
+                    font-size: min(6vw, 20px);
                     width: fit-content;
                 }
             }
@@ -230,8 +232,9 @@
     
         main {
             section {
-                padding-top: 40px;
-                height: 100vh;
+                padding-top: 3em;
+                max-height: calc(100vh - 3em);
+                height: calc(100vh - 3em);
                 width: 100vw;
             }
             
@@ -275,131 +278,191 @@
                     } 
         
                     .conteiner-carrossel-um {
-                        .animacao-orbita {
-                            height: calc(600 * var(--orbita-tamanho));
-                            width: calc(600 * var(--orbita-tamanho));
-                            position: relative;
-                            /* background-color: red; */
+                        display: grid;
+                        place-items: center;
+
+                        .orbita-animacao {
+                            height: 250px;
+                            width: 250px;
                     
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            /* transform: ; */
-                
-                            [class$="marcacao"] {
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                border: calc(8*var(--orbita-tamanho)) solid rgb(206, 206, 206);
-                                border-radius: 50%;
-                                z-index: 2;
-                        
-                            }
-                            [class^="cinco"] {
-                                width: calc(645*var(--orbita-tamanho));
-                                height: calc(645*var(--orbita-tamanho));
-                            }
-                            [class^="quatro"] {
-                                width: calc(500*var(--orbita-tamanho));
-                                height: calc(500*var(--orbita-tamanho));
-                            }
-                            [class^="tres"] {
-                                width: calc(365*var(--orbita-tamanho));
-                                height: calc(365*var(--orbita-tamanho));
-                            }
-                            [class^="dois"] {
-                                width: calc(225*var(--orbita-tamanho));
-                                height: calc(225*var(--orbita-tamanho));
-                            }
-                            [class^="um"] {
-                                width: calc(90*var(--orbita-tamanho));
-                                height: calc(90*var(--orbita-tamanho));
-                            }
-                
-    
-    
-                            [class^="orbita"] {
-                                position: absolute;
-                                left: calc(4.17% * var(--especial));
-                                top: calc(4.17% * var(--especial));
-                                /* background-color: rgba(0, 0, 255, 0.2); */
-                                z-index: 3;
-                            }
-                            [class$="cinco"] {
-                                width: calc(500*var(--orbita-tamanho));
-                                height: calc(500*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-esquerda infinite linear;
-                            }
-                            [class$="quatro"] {
-                                width: calc(400*var(--orbita-tamanho));
-                                height: calc(400*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-direita infinite linear;
-                            }
-                            [class$="tres"] {
-                                width: calc(300*var(--orbita-tamanho));
-                                height: calc(300*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-esquerda infinite linear;
-                            }
-                            [class$="dois"] {
-                                width: calc(200*var(--orbita-tamanho));
-                                height: calc(200*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-direita infinite linear;
-                            }
-                            [class$="um"] {
-                                width: calc(100*var(--orbita-tamanho));
-                                height: calc(100*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-esquerda infinite linear;
-                            }
-                
-    
-    
-                            [class^='item'] {
-                                position: absolute;
-                                border-radius: 10%;
-                            }
-                            [class$='js'] {
-                                /* background-color: yellow; */
-                                height: calc(60*var(--orbita-tamanho));
-                                width: calc(60*var(--orbita-tamanho));
-                                animation: calc(20*var(--orbita-tempo)) rotacao-direita infinite linear;
-                            }
-                            [class$='css'] {
-                                /* background-color: blue; */
-                                height: calc(75*var(--orbita-tamanho));
-                                width: calc(75*var(--orbita-tamanho));
-                                left: 103%;
-                                top: 40%;
-                                animation: calc(20*var(--orbita-tempo)) rotacao-esquerda infinite linear;
-                            }
-                            [class$='html'] {
-                                /* background-color: orange; */
-                                height: calc(50*var(--orbita-tamanho));
-                                width: calc(50*var(--orbita-tamanho));
-                                left: 78%;
-                                top: 76%;
-                                animation: calc(20*var(--orbita-tempo)) rotacao-esquerda infinite linear;
-                            }
-                
-                            @keyframes rotacao-esquerda {
+                            @keyframes OrbitaRotation {
                                 0% {
-                                    transform: rotate(360deg);
+                                    transform: rotateZ(0deg);
+                                }
+                                100% {
+                                    transform: rotateZ(360deg);
                                 }
                             }
-                        
-                            @keyframes rotacao-direita {
-                                0% {
-                                    transform: rotate(-360deg);
+                            
+                            #orbita {
+                                height: 100%;
+                                width: 100%;
+                                position: relative;
+                    
+                                display: grid;
+                                place-items: center;
+                                
+                                [class^="camada"] {
+                                    position: absolute;
+                                    border-radius: 50%;
+                                    animation: OrbitaRotation linear infinite;
+                    
+                                    border: 1px solid red;
+                                    z-index: 1;
                                 }
-                            } 
-                
+                                [class$="um"] {
+                                    height: 95%;
+                                    width: 95%;
+                                    animation-duration: calc(40 * var(--OrbitaTime));
+                                } [class$="dois"] {
+                                    height: 80%;
+                                    width: 80%;
+                                    animation-duration: calc(60 * var(--OrbitaTime));
+                                    animation-direction: reverse;
+                                } [class$="tres"] {
+                                    height: 65%;
+                                    width: 65%;
+                                    animation-duration: calc(30 * var(--OrbitaTime));
+                                } [class$="quatro"] {
+                                    height: 50%;
+                                    width: 50%;
+                                    animation-duration: calc(70 * var(--OrbitaTime));
+                                    animation-direction: reverse;
+                                } [class$="cinco"] {
+                                    height: 35%;
+                                    width: 35%;
+                                    animation-duration: calc(20 * var(--OrbitaTime));
+                                } [class$="seis"] {
+                                    height: 20%;
+                                    width: 20%;
+                                    animation-duration: calc(90 * var(--OrbitaTime));
+                                    animation-direction: reverse;
+                                } [class$="sete"] {
+                                    height: 5%;
+                                    width: 5%;
+                                    animation-duration: calc(50 * var(--OrbitaTime));
+                                }
+                    
+                                //todo os items 
+                                [class^="item"] {
+                                    position: absolute;
+                                    z-index: 10;
+                                    // border: 1px solid blue;
+                                }
+                                //todas as orbitas
+                                [class$="orbita"] {
+                                    position: absolute;
+                                    // border: 1px solid blue;    
+                                }
+                    
+                                //git orbita
+                                [class^="git"] {
+                                    animation: OrbitaRotation calc(30 * var(--OrbitaTime)) infinite linear reverse;
+                                    height: 40%;
+                                    width: 40%;
+                                    top: -6%;
+                                    left: -6%;
+                    
+                                    [class$="git"] {
+                                        animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear reverse;
+                                        // background-color: red;
+                                        height: 20%;
+                                        width: 20%;
+                                        top: 47%;
+                                        left: 47%;
+                                    }
+                    
+                                    [class$="ghub"] {
+                                        animation: OrbitaRotation calc(30 * var(--OrbitaTime)) infinite linear reverse;
+                                        // background-color: rgba(0, 0, 0, 0.817);
+                                        height: 10%;
+                                        width: 10%;
+                                        top: 10%;
+                                        left: 10%;
+                                    }
+                                }
+                    
+                                //orbita js
+                                [class^="js"] {
+                                    animation: OrbitaRotation calc(40 * var(--OrbitaTime)) infinite linear;
+                                    height: 30%;
+                                    width: 30%;
+                                    top: 0%;
+                                    left: 0%;
+                                    
+                                    //item js
+                                    [class$="js"] {
+                                        animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear reverse;
+                                        // background-color: yellow;
+                                        height: 30%;
+                                        width: 30%;
+                                        top: 40%;
+                                        left: 40%;
+                                    }
+                    
+                                    //item react 
+                                    [class$="react"] {
+                                        animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear;
+                                        // background-color: aqua;
+                                        height: 20%;
+                                        width: 20%;
+                                        top: 10%;
+                                        left: 10%;
+                                    }
+                                }
+                    
+                                //orbita css
+                                [class^="css"] {
+                                    animation: OrbitaRotation calc(90 * var(--OrbitaTime)) infinite linear;
+                                    height: 30%;
+                                    width: 30%;
+                                    top: 15%;
+                                    left: 15%;
+                                    
+                                    [class$="css"] {
+                                        animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear;
+                                        // background-color: blue;
+                                        height: 65%;
+                                        width: 65%;
+                                        top: 25%;
+                                        left: 25%;
+                                    }
+                    
+                                    [class$="scss"] {
+                                        animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear;
+                                        // background-color: palevioletred;
+                                        height: 40%;
+                                        width: 40%;
+                                        top: -50%;
+                                        left: -50%;
+                                    }
+                                }
+                    
+                                [class$="html"] {
+                                    animation: OrbitaRotation calc(50 * var(--OrbitaTime)) infinite linear;
+                                    // background-color: orange;
+                                    height: 10%;
+                                    width: 10%;
+                                    top: 8%;
+                                    left: 8%;
+                                }
+                    
+                                [class$="python"] {
+                                    animation: OrbitaRotation calc(300 * var(--OrbitaTime)) infinite linear;
+                                    // background-color: green;
+                                    height: 5%;
+                                    width: 5%;
+                                    top: 12%;
+                                    left: 12%;
+                                }
+                            }
                         }
                     }
         
                     .conteiner-carrossel-dois {
                         div {
-                            height: 50vw;
-                            width: 50vw;
+                            height: min(50vw, 35em);
+                            width: min(50vw, 35em);
                             background-image: linear-gradient(150deg, blue, orange);
                     
                             border-radius: 50%;
@@ -633,6 +696,7 @@
                     padding: 0px 10px;
                     margin: auto;
                     font-size: clamp(12px, 5vw, 30px);
+                    line-height: clamp(20px, 4vw, 50px);
                     max-width: 70vw;
                 } 
             }
@@ -649,7 +713,6 @@
                     place-items: center;
     
                     h2 {
-                        // transform: translateY(20%);
                         font-size: calc(var(--tamanho-bloco)*60);
                     }
                 
@@ -771,9 +834,13 @@
                     text-align: right;
                     margin: 0px 16px 16px 0px;
                 }
+
+                h3 {
+                    font-size: clamp(1.2em, 6vw, 3em);
+                }
     
                 [class^="barra-seletora"] {
-                    height: 40px;
+                    height: clamp(3em, 8vw, 4em);
                     padding: 0px 5px;
                     
                     display: flex;
@@ -784,16 +851,15 @@
                 .barra-seletora-um {background-color: var(--rosa);}
                 .barra-seletora-dois {background-color: var(--azul);}
     
-                .seletor {
-                    height: 30px;
-            
+                .seletor {            
                     border-radius: 15px;
                     text-align: center;
+                    font-size: clamp(1em, 4vw, 1.8em);
                     font-weight: 600;
                 }
 
                 option {
-                    font-size: 3vw;
+                    font-size: clamp(10px, 1.5vw, 15px);
                 }
     
                 .conhecimentos-texto {
@@ -875,89 +941,94 @@
                 h2 {
                     margin: 0px 0px 30px 8px;
                 }
-    
-                #game-boy {
-                    margin: auto;
-                    height: fit-content;
-                    width: fit-content;
-    
-                    .fundo {
-                        height: 80vh;
-                        width: 80vw;
-                        background-color: var(--verde);
-                        box-shadow: 3px 7px 0px var(--verde-escuro);
-                        
-                        border-radius: 25px;
-                        padding: 20px 0px;
-    
-                        #tela {
-                            height: 50vh;
-                            width: 70vw;
-                            background-color: var(--preto);
+
+                #content {
+                    #game-boy {
+                        margin: auto;
+                        height: fit-content;
+                        width: fit-content;
+        
+                        .fundo {
+                            height: 75vh;
+                            width: 80vw;
+                            background-color: var(--verde);
+                            box-shadow: 12px 12px 0px 10px var(--verde-escuro);
                             
-                            margin: auto;
-                            overflow-x: hidden;
-    
-                            #desligado {
-                                width: 70vw;
+                            border-radius: 25px;
+                            padding: 20px 0px;
+        
+                            #tela {
                                 height: 50vh;
+                                width: 70vw;
                                 background-color: var(--preto);
-                                position: absolute;
-                                display: none;
-                            }
-    
-                            .projetos {
-                                /* position: absolute; */
-                                display: flex;
-    
-                                .projeto {
-                                    height: 50vh;
+                                border-radius: 15px;
+                                
+                                margin: auto;
+                                overflow-x: hidden;
+        
+                                #desligado {
                                     width: 70vw;
-                                    border-radius: 30px;
+                                    height: 50vh;
+                                    background-color: var(--preto);
+                                    position: absolute;
                                     display: none;
+                                }
+        
+                                .projetos {
+                                    /* position: absolute; */
+                                    display: flex;
+        
+                                    .projeto {
+                                        height: 50vh;
+                                        width: 70vw;
+                                        border-radius: 30px;
+                                        display: none;
+                                    }
+                                }
+                            }
+        
+                            #botoes-game-boy {
+                                margin-top: 50px;
+                                
+                                display: flex;
+                                justify-content: space-evenly;
+                                align-items: center;
+        
+                                span {
+                                    font-weight: 800;
+                                    font-size: 50px;
+                                    position: absolute;
+                                    top: 10%;
+                                    left: 10%;
+                                }
+                                [class$="direita"] span {transform: rotate(90deg);}
+                                [class$="esquerda"] span {transform: rotate(-90deg);} 
+        
+                                [class^="botao"] {
+                                    width: 60px;
+                                    border-radius: 30px;
+                                    background-color: var(--amarelo);
+                                    
+                                    box-shadow: 3px 7px 0px var(--amarelo-escuro);
+                                    position: relative;
+                                    transition-duration: 0.1s;
+                                }
+        
+                                [class*="seta"] {
+                                    height: 60px;
+                                }
+        
+                                .botao-start {
+                                    height: 30px;
+                            
+                                    padding-top: 3px;
+                                    text-align: center;
                                 }
                             }
                         }
-    
-                        #botoes-game-boy {
-                            margin-top: 50px;
-                            
-                            display: flex;
-                            justify-content: space-evenly;
-                            align-items: center;
-    
-                            span {
-                                font-weight: 800;
-                                font-size: 50px;
-                                position: absolute;
-                                top: 10%;
-                                left: 10%;
-                            }
-                            [class$="direita"] span {transform: rotate(90deg);}
-                            [class$="esquerda"] span {transform: rotate(-90deg);} 
-    
-                            [class^="botao"] {
-                                width: 60px;
-                                border-radius: 30px;
-                                background-color: var(--amarelo);
-                                
-                                box-shadow: 3px 7px 0px var(--amarelo-escuro);
-                                position: relative;
-                                transition-duration: 0.1s;
-                            }
-    
-                            [class*="seta"] {
-                                height: 60px;
-                            }
-    
-                            .botao-start {
-                                height: 30px;
-                        
-                                padding-top: 3px;
-                                text-align: center;
-                            }
-                        }
                     }
+    
+                    #tela-emuladora {display: none;}
                 }
             }
     
@@ -965,7 +1036,7 @@
             
         footer {
             width: 100%;
-            height: 300px;
+            height: 20em;
             background-color: var(--branco-20);
     
             padding: 15px;
@@ -974,8 +1045,12 @@
             flex-direction: column;
             justify-content: space-between;
     
-            .texto-um {
-                margin-bottom: 20px;
+            p {
+                font-size: clamp(16px, 1.4vw, 25px);
+            }
+
+            #texto {
+                font-size: clamp(16px, 1.4vw, 20px);
             }
             
             #divisor {
@@ -997,6 +1072,18 @@
             
             [class^="contato"] {
                 margin-bottom: 10px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                }
+            }
+
+            [class^="icon-"] {
+                height: 2em;
+                width: 2em;
+                padding-right: .4em;
             }
         }
     }
@@ -1005,33 +1092,170 @@
 @media screen and (min-width: 768px) {
 
     :root {
-        --Rod-Gig-size: .5px;
+        --Rod-Gig-size: .6px;
+        --tamanho-bloco: .10vw;
     }
 
     html, body{
         
+        header {
+            height: 4em;
+
+            span {
+                transform: scale(2);
+            }
+        }
+        
         main {
+            section {
+                padding-top: 3.5em;
+            }
 
             #home {
                 >p {
                     margin: 25px auto;
                 }
-    
-                >#carrossel-itens {
-                    transition-duration: 4s;                    
+
+                span {
+                    font-size: 3em;
+                }
+            }
+
+            #sobre-min {
+                .blocos {
+                    span {
+                        transform: scale(5) translateY(-30%);
+                    }
+
+                    p {
+                        font-size: calc(var(--tamanho-bloco) * 45);
+                        line-height: calc(var(--tamanho-bloco) * 40);
+                    }
+                }
+            }
+            
+            #projetos {
+                #content {
+                    margin-left: 1.8em;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
                     
-                    // .conteiner-carrossel-dois {
-                    //     div {
+                    #tela-emuladora {
+                        height: 70vh;
+                        width: 45vw;
+                        background-color: rgb(45, 45, 45);
+                        border-radius: 25px;
+
+                        display: grid;
+                        place-items: center;
+                        
+                        iframe {
+                            height: 90%;
+                            width: 95%;
+                        }
+                    }
+
+                    #game-boy {
+                        .fundo {
+                            width: 45vw;
+                            height: 70vh;
+    
+                            #tela {
+                                width: 40vw;
+                                
+                                #desligado {
+                                    width: 40vw;
+                                }
+    
+                                .projetos {
+                                    .projeto {
+                                        width: 40vw;
+                                    }
+                                }
+                            }
                             
-                    //     }
-                    // }
+                        }
+                    }
                 }
             }
         }
-    }
 
+        footer {
+            height: 12em;
+            #contatos {
+                display: flex;
+                gap: 2em;
+            }
+        }
+    }
 }
 
-// @media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+
+    :root {
+        --tamanho-bloco: .04vw;
+    }
     
-// }
+    html, body {
+        header {
+            span {
+                display: none !important;
+            }
+            
+            li {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 0;
+                height: 2em;
+                width: 80em;
+                background-color: var(--branco-10);
+                transform: translateY(0);
+
+                flex-direction: row;
+                gap: 2em;
+            }
+        }
+
+        main {
+            #sobre-min {
+                .blocos {
+                    grid-template-columns: 3;
+                    grid-template-rows: 3;
+
+                    
+
+                    #bloco-1 {grid-row: 1; grid-column: 1} 
+                    #bloco-2 {grid-row: 1; grid-column: 3}
+                    #bloco-3 {grid-row: 2; grid-column: 2}
+                    #bloco-4 {grid-row: 3; grid-column: 3}
+                    #bloco-5 {grid-row: 3; grid-column: 1}
+                }
+            }
+        }
+        
+        footer {
+            flex-direction: row;
+            height: 7.5em;
+            justify-content: space-around;
+            align-items: center;
+
+            #texto {
+                max-width: 30%;
+                text-align: left;
+            }
+
+            #divisor {
+                &::after {
+                    display: none;
+                }
+            }
+
+            #contatos {
+                transform: translateY(-10%);
+            }
+        }
+    }
+}
